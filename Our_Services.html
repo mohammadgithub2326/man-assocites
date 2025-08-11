@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services - MAN Associates</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0B3C5D',secondary:'#328CC1'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Lato', sans-serif; }
+.font-poppins { font-family: 'Poppins', sans-serif; }
+.service-card {
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+transform-origin: center;
+}
+.service-card:hover {
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.icon-pulse {
+animation: iconPulse 2s infinite;
+}
+@keyframes iconPulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+}
+.service-icon {
+transition: all 0.3s ease;
+}
+.service-card:hover .service-icon {
+transform: rotate(5deg) scale(1.1);
+}
+.learn-more-arrow {
+transition: transform 0.3s ease;
+}
+.service-card:hover .learn-more-arrow {
+transform: translateX(4px);
+}
+</style>
+</head>
+<body class="bg-white">
+<header class="fixed w-full top-0 z-40 transition-all duration-300" id="header">
+<div class="max-w-7xl mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+<img src="Man-Associates-logo.png" alt="MAN Associates Logo" class="w-12 h-12 object-contain" />
+</div>
+<div>
+<h1 class="text-xl font-poppins font-bold text-primary">MAN Associates</h1>
+<p class="text-xs text-gray-600">We Serve Employer for Outsourcing</p>
+</div>
+</div>
+<nav class="hidden lg:flex items-center space-x-8">
+<a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="About_Us.html" class="text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="Our_Services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+<a href="Events_Gallery.html" class="text-gray-700 hover:text-primary transition-colors">Gallery</a>
+<a href="Contact_Us.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="hidden md:flex items-center space-x-2 text-sm">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<a href="tel:+919642311515">
+
+    <span class="text-gray-700">+91 96423-11515</span>
+</a>
+</div>
+<button id="request-quote-btn" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap"
+    onclick="window.location.href='Service_Quotation.html'">
+Request Quote
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-0">
+<section class="py-20 bg-gradient-to-br from-primary to-secondary text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>
+<div class="absolute bottom-20 right-20 w-24 h-24 bg-white rounded-full"></div>
+<div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white rounded-full"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+<h1 class="text-5xl md:text-6xl font-poppins font-bold mb-6">Our Services</h1>
+<p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+Comprehensive manpower solutions designed to meet your specific requirements across multiple sectors and industries
+</p>
+<div class="flex items-center justify-center space-x-2 text-lg">
+<a href="index.html" class="hover:underline opacity-80">Home</a>
+<i class="ri-arrow-right-s-line opacity-60"></i>
+<span>Services</span>
+</div>
+</div>
+</section>
+<section id="services" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4 animate-fade-in-up">Professional Manpower Solutions</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in-up delay-100">
+                Discover our comprehensive range of services designed to enhance your operational efficiency, security, and workplace experience.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Security Services Card -->
+            <div class="service-card bg-white rounded-xl p-8 shadow-lg group animate-fade-in-up delay-200">
+                <div class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 service-icon icon-pulse shadow-lg">
+                    <i class="ri-shield-user-line text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-poppins font-bold mb-4 text-gray-900">Security Services</h3>
+                <ul class="text-gray-600 mb-6 leading-relaxed space-y-2">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>Corporate & Residential Security</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Event & VIP Protection</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>Industrial & Logistics Security</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Customized Security Solutions</li>
+                </ul>
+                <div class="flex space-x-2 mb-4">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Security 1" class="rounded-lg w-16 h-12 object-cover shadow-md">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Security 2" class="rounded-lg w-16 h-12 object-cover shadow-md">
+                </div>
+                <button data-modal="security" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group learn-more-btn focus:outline-none">
+                    Learn More
+                    <i class="ri-arrow-right-line ml-2 learn-more-arrow"></i>
+                </button>
+            </div>
+            <!-- E-Security Solutions Card -->
+            <div class="service-card bg-white rounded-xl p-8 shadow-lg group animate-fade-in-up delay-300">
+                <div class="w-20 h-20 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mb-6 service-icon icon-pulse shadow-lg">
+                    <i class="ri-camera-line text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-poppins font-bold mb-4 text-gray-900">E-Security Solutions</h3>
+                <ul class="text-gray-600 mb-6 leading-relaxed space-y-2">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Biometric & Access Control</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>CCTV & Surveillance Systems</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Alarm & Intrusion Detection</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>24/7 Monitoring & Integration</li>
+                </ul>
+                <div class="flex space-x-2 mb-4">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="E-Security 1" class="rounded-lg w-16 h-12 object-cover shadow-md">
+                    <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=400&q=80" alt="E-Security 2" class="rounded-lg w-16 h-12 object-cover shadow-md">
+                </div>
+                <button data-modal="e-security" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group learn-more-btn focus:outline-none">
+                    Learn More
+                    <i class="ri-arrow-right-line ml-2 learn-more-arrow"></i>
+                </button>
+            </div>
+            <!-- Office Support Services Card -->
+            <div class="service-card bg-white rounded-xl p-8 shadow-lg group animate-fade-in-up delay-400">
+                <div class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 service-icon icon-pulse shadow-lg">
+                    <i class="ri-user-settings-line text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-poppins font-bold mb-4 text-gray-900">Office Support Services</h3>
+                <ul class="text-gray-600 mb-6 leading-relaxed space-y-2">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>Reception & Concierge</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Mailroom & Admin Support</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>Visitor & Facility Management</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Janitorial & Maintenance</li>
+                </ul>
+                <div class="flex space-x-2 mb-4">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Office Support 1" class="rounded-lg w-16 h-12 object-cover shadow-md">
+                    <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80" alt="Office Support 2" class="rounded-lg w-16 h-12 object-cover shadow-md">
+                </div>
+                <button data-modal="office-support" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group learn-more-btn focus:outline-none">
+                    Learn More
+                    <i class="ri-arrow-right-line ml-2 learn-more-arrow"></i>
+                </button>
+            </div>
+            <!-- Housekeeping Services Card -->
+            <div class="service-card bg-white rounded-xl p-8 shadow-lg group animate-fade-in-up delay-500 hover:shadow-2xl transition-shadow duration-300">
+                <div class="w-20 h-20 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mb-6 service-icon icon-pulse shadow-lg">
+                    <i class="ri-home-smile-line text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-poppins font-bold mb-4 text-gray-900">Housekeeping Services</h3>
+                <ul class="text-gray-600 mb-6 leading-relaxed space-y-2">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Corporate & Office Cleaning Excellence</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>Residential Deep Cleaning & Hygiene</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Hospitality & Healthcare Sanitation</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>Eco-Friendly & Customized Solutions</li>
+                </ul>
+                <div class="flex space-x-2 mb-4">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Housekeeping 1" class="rounded-lg w-16 h-12 object-cover shadow-md hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Housekeeping 2" class="rounded-lg w-16 h-12 object-cover shadow-md hover:scale-105 transition-transform duration-300">
+                </div>
+                <button data-modal="housekeeping" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group learn-more-btn focus:outline-none">
+                    Learn More
+                    <i class="ri-arrow-right-line ml-2 learn-more-arrow"></i>
+                </button>
+            </div>
+            <!-- Pantry Services Card -->
+            <div class="service-card bg-white rounded-xl p-8 shadow-lg group lg:col-start-2 animate-fade-in-up delay-600 hover:shadow-2xl transition-shadow duration-300">
+                <div class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 service-icon icon-pulse shadow-lg">
+                    <i class="ri-restaurant-line text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-poppins font-bold mb-4 text-gray-900">Pantry Services</h3>
+                <ul class="text-gray-600 mb-6 leading-relaxed space-y-2">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>Premium Pantry Stocking & Replenishment</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Healthy Micro-Market & Vending Solutions</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-primary rounded-full mr-2"></span>Beverage & Refreshment Management</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-secondary rounded-full mr-2"></span>Tailored Pantry Experiences</li>
+                </ul>
+                <div class="flex space-x-2 mb-4">
+                    <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Pantry 1" class="rounded-lg w-16 h-12 object-cover shadow-md hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Pantry 2" class="rounded-lg w-16 h-12 object-cover shadow-md hover:scale-105 transition-transform duration-300">
+                </div>
+                <button data-modal="pantry" class="inline-flex items-center text-primary font-semibold hover:text-secondary transition-colors group learn-more-btn focus:outline-none">
+                    Learn More
+                    <i class="ri-arrow-right-line ml-2 learn-more-arrow"></i>
+                </button>
+            </div>
+        </div>
+        <div class="text-center animate-fade-in-up delay-700">
+            <div class="inline-flex items-center space-x-4 bg-white rounded-2xl p-6 shadow-lg">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                    <i class="ri-customer-service-2-line text-2xl text-white"></i>
+                </div>
+                <div class="text-left">
+                    <h4 class="text-xl font-poppins font-bold text-gray-900">Need Custom Solutions?</h4>
+                    <p class="text-gray-600">Contact our team to discuss your specific requirements</p>
+                </div>
+                <button class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap font-medium" onclick="window.location.href='Service_Quotation.html'">
+                    Get Quote
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="service-modal-overlay" class="fixed inset-0 bg-black bg-opacity-40 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="service-modal" class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-8 relative transform scale-95 opacity-0 transition-all duration-300 animate-modal-pop" style="font-family: 'Poppins', 'Lato', sans-serif;">
+            <button id="close-service-modal" class="absolute top-4 right-4 text-gray-400 hover:text-primary text-2xl focus:outline-none transition-colors">
+                <i class="ri-close-line"></i>
+            </button>
+            <div id="service-modal-content" class="max-h-[70vh] overflow-y-auto pr-2">
+                <!-- Dynamic content goes here -->
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+@keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(40px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-in-up { animation: fade-in-up 0.8s cubic-bezier(0.4,0,0.2,1) both; }
+.animate-fade-in-up.delay-100 { animation-delay: .1s; }
+.animate-fade-in-up.delay-200 { animation-delay: .2s; }
+.animate-fade-in-up.delay-300 { animation-delay: .3s; }
+.animate-fade-in-up.delay-400 { animation-delay: .4s; }
+.animate-fade-in-up.delay-500 { animation-delay: .5s; }
+.animate-fade-in-up.delay-600 { animation-delay: .6s; }
+.animate-fade-in-up.delay-700 { animation-delay: .7s; }
+@keyframes modal-pop {
+    0% { opacity: 0; transform: scale(0.95);}
+    100% { opacity: 1; transform: scale(1);}
+}
+.animate-modal-pop { animation: modal-pop 0.4s cubic-bezier(0.4,0,0.2,1) both; }
+</style>
+<script>
+const serviceDetails = {
+    security: {
+        title: "Security Services",
+        icon: "ri-shield-user-line",
+        gradient: "from-primary to-secondary",
+        images: [
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80"
+        ],
+        description: `
+            <h4 class="text-lg font-bold mb-2 text-primary">Security Services</h4>
+            <div class="max-h-96 overflow-y-auto pr-2">
+                <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                    <li><strong>Corporate Security:</strong> 24/7 office building security, reception management, and executive protection for VIPs.</li>
+                    <li><strong>Residential Security:</strong> Apartment and gated community patrols, personal security guards for homes.</li>
+                    <li><strong>Event Security:</strong> Crowd control, access screening, and VIP protection for events.</li>
+                    <li><strong>Retail Security:</strong> Loss prevention, mall security, and parking lot monitoring.</li>
+                    <li><strong>Industrial Security:</strong> Factory, warehouse, and construction site protection, logistics security.</li>
+                    <li><strong>Healthcare Security:</strong> Hospital and clinic safety, emergency response.</li>
+                    <li><strong>Educational Security:</strong> School and campus patrols, event security.</li>
+                    <li><strong>Bank & Financial Security:</strong> Branch, ATM, and cash transit protection.</li>
+                    <li><strong>Hotel & Hospitality Security:</strong> Hotel, resort, and event security for guests and staff.</li>
+                    <li><strong>Customized Solutions:</strong> Tailored security plans, consulting, and technology integration (CCTV, alarms, access control).</li>
+                </ul>
+                <h5 class="font-semibold text-primary mb-1">Why Choose Man Associates?</h5>
+                <ul class="list-disc pl-5 mb-2 text-gray-700">
+                    <li>Strong bench strength for seamless operations and leadership continuity.</li>
+                    <li>24/7 Quick Response Team (QRT) for emergencies and critical incidents.</li>
+                    <li>Dedicated Training Academy for continuous staff development and skill enhancement.</li>
+                </ul>
+                <p class="text-gray-700">Trust Man Associates for reliable, professional, and responsive security solutions tailored to your needs.</p>
+            </div>
+        `
+    },
+    "e-security": {
+        title: "E-Security Solutions",
+        icon: "ri-camera-line",
+        gradient: "from-secondary to-primary",
+        images: [
+            "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&q=80"
+        ],
+        description: `
+            <div class="max-h-96 overflow-y-auto pr-2">
+                <h4 class="text-lg font-bold mb-2 text-primary">E-Security Solutions</h4>
+                <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                    <li><strong>Access Control Systems:</strong> Keycard, key fob, and biometric access for advanced security.</li>
+                    <li><strong>Intrusion Detection:</strong> Network monitoring, video surveillance, and motion detection.</li>
+                    <li><strong>Alarm & Monitoring:</strong> 24/7 alarm monitoring, fire alarms, and rapid response protocols.</li>
+                    <li><strong>System Integration:</strong> Centralized management and mobile app integration for unified control.</li>
+                    <li><strong>Cybersecurity Training:</strong> Employee awareness programs for password security and phishing prevention.</li>
+                </ul>
+                <h5 class="font-semibold text-primary mb-1">Benefits of Man Associates' E-Security:</h5>
+                <ul class="list-disc pl-5 mb-2 text-gray-700">
+                    <li>Multi-layered protection and rapid incident response.</li>
+                    <li>Proactive monitoring for peace of mind.</li>
+                    <li>Cost-effective and scalable solutions.</li>
+                </ul>
+                <p class="text-gray-700">Contact Man Associates for a complete e-security solution tailored to your organization.</p>
+            </div>
+        `
+    },
+    "office-support": {
+        title: "Office Support Services",
+        icon: "ri-user-settings-line",
+        gradient: "from-primary to-secondary",
+        images: [
+            "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=800&q=80"
+        ],
+        description: `
+            <div class="max-h-96 overflow-y-auto pr-2">
+                <h4 class="text-lg font-bold mb-2 text-primary">Office Support Services</h4>
+                <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                    <li><strong>Reception & Concierge:</strong> Professional welcome, visitor management, and meeting room coordination.</li>
+                    <li><strong>Administrative Support:</strong> Document management, data entry, and calendar scheduling.</li>
+                    <li><strong>Mailroom & Printing:</strong> Bulk mail dispatch, copying, scanning, and postal services.</li>
+                    <li><strong>Security & Safety:</strong> Night patrols, emergency preparedness, and first aid support.</li>
+                    <li><strong>Janitorial & Maintenance:</strong> Regular cleaning, waste removal, and minor repairs.</li>
+                </ul>
+                <h5 class="font-semibold text-primary mb-1">Why Choose Man Associates?</h5>
+                <ul class="list-disc pl-5 mb-2 text-gray-700">
+                    <li>Customized, scalable solutions for your business needs.</li>
+                    <li>Experienced, reliable, and well-trained staff.</li>
+                    <li>Professional image and enhanced operational efficiency.</li>
+                </ul>
+                <p class="text-gray-700">Focus on your business while Man Associates handles your office support seamlessly.</p>
+            </div>
+        `
+    },
+    housekeeping: {
+        title: "Housekeeping Services",
+        icon: "ri-home-smile-line",
+        gradient: "from-secondary to-primary",
+        images: [
+            "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80"
+        ],
+        description: `
+            <div class="max-h-96 overflow-y-auto pr-2">
+                <h4 class="text-lg font-bold mb-2 text-primary">Housekeeping Services</h4>
+                <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                    <li><strong>Corporate & Office Cleaning:</strong> Workstations, meeting rooms, and common areas.</li>
+                    <li><strong>Residential Cleaning:</strong> Apartments, deep cleaning, and move-in/move-out services.</li>
+                    <li><strong>Hospitality & Healthcare:</strong> Hotel rooms, public areas, hospital and clinic hygiene.</li>
+                    <li><strong>Retail & Industrial:</strong> Store, mall, factory, and warehouse cleaning.</li>
+                    <li><strong>Event & Venue:</strong> Pre/post-event, conference, and exhibition cleaning.</li>
+                    <li><strong>Custom Solutions:</strong> Tailored cleaning plans, eco-friendly practices, and specialized services.</li>
+                </ul>
+                <h5 class="font-semibold text-primary mb-1">Why Choose Man Associates?</h5>
+                <ul class="list-disc pl-5 mb-2 text-gray-700">
+                    <li>Experienced, highly trained staff and 24/7 support.</li>
+                    <li>Advanced equipment and proven reliability.</li>
+                    <li>Customized solutions for every sector.</li>
+                </ul>
+                <p class="text-gray-700">Maintain a spotless, hygienic environment with Man Associates' trusted housekeeping services.</p>
+            </div>
+        `
+    },
+    pantry: {
+        title: "Pantry Services",
+        icon: "ri-restaurant-line",
+        gradient: "from-primary to-secondary",
+        images: [
+            "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+        ],
+        description: `
+            <div class="max-h-96 overflow-y-auto pr-2">
+                <h4 class="text-lg font-bold mb-2 text-primary">Pantry Services</h4>
+                <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                    <li><strong>Pantry Stocking & Replenishment:</strong> Regular restocking, customized inventory, and just-in-time deliveries.</li>
+                    <li><strong>Micro-Market & Vending:</strong> Setup, management, and healthy snack options.</li>
+                    <li><strong>Beverage Services:</strong> Coffee, tea, water filtration, and equipment maintenance.</li>
+                    <li><strong>Catering & Fruit Delivery:</strong> Fresh fruit baskets and event catering.</li>
+                </ul>
+                <h5 class="font-semibold text-primary mb-1">Benefits of Man Associates' Pantry Services:</h5>
+                <ul class="list-disc pl-5 mb-2 text-gray-700">
+                    <li>Boost productivity and morale with a well-stocked pantry.</li>
+                    <li>Convenient, cost-effective, and tailored to your needs.</li>
+                    <li>Reliable suppliers and seamless integration with your operations.</li>
+                </ul>
+                <p class="text-gray-700">Fuel your team's success with Man Associates' pantry solutions. Contact us for a custom plan!</p>
+            </div>
+        `
+    }
+};
+
+function showServiceModal(key) {
+    const modalOverlay = document.getElementById('service-modal-overlay');
+    const modal = document.getElementById('service-modal');
+    const content = document.getElementById('service-modal-content');
+    const data = serviceDetails[key];
+    if (!data) return;
+
+    content.innerHTML = `
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 animate-fade-in-up">
+            <div class="flex-shrink-0 w-full md:w-48">
+                <div class="w-20 h-20 bg-gradient-to-br ${data.gradient} rounded-2xl flex items-center justify-center mb-4 mx-auto md:mx-0 shadow-lg">
+                    <i class="${data.icon} text-3xl text-white"></i>
+                </div>
+                <div class="flex space-x-2">
+                    <img src="${data.images[0]}" alt="${data.title} image 1" class="rounded-xl w-20 h-16 object-cover shadow-md transition-transform duration-300 hover:scale-105">
+                    <img src="${data.images[1]}" alt="${data.title} image 2" class="rounded-xl w-20 h-16 object-cover shadow-md transition-transform duration-300 hover:scale-105">
+                </div>
+            </div>
+            <div class="flex-1 mt-6 md:mt-0">
+                <h3 class="text-2xl font-poppins font-bold mb-2 text-gray-900">${data.title}</h3>
+                ${data.description}
+            </div>
+        </div>
+    `;
+
+    modalOverlay.classList.remove('opacity-0', 'pointer-events-none');
+    setTimeout(() => {
+        modal.classList.remove('scale-95', 'opacity-0');
+        modal.classList.add('scale-100', 'opacity-100');
+    }, 10);
+}
+
+function hideServiceModal() {
+    const modalOverlay = document.getElementById('service-modal-overlay');
+    const modal = document.getElementById('service-modal');
+    modal.classList.remove('scale-100', 'opacity-100');
+    modal.classList.add('scale-95', 'opacity-0');
+    setTimeout(() => {
+        modalOverlay.classList.add('opacity-0', 'pointer-events-none');
+    }, 300);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.learn-more-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            showServiceModal(this.getAttribute('data-modal'));
+        });
+    });
+    document.getElementById('close-service-modal').addEventListener('click', hideServiceModal);
+    document.getElementById('service-modal-overlay').addEventListener('click', function (e) {
+        if (e.target === this) hideServiceModal();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') hideServiceModal();
+    });
+});
+</script>
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4">Why Choose Our Services</h2>
+<p class="text-xl text-gray-600">The advantages that set us apart in the industry</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="text-center group">
+<div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<i class="ri-shield-check-line text-3xl text-white"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3 text-gray-900">Fully Licensed</h3>
+<p class="text-gray-600">All necessary licenses and certifications including PSARA, GST</p>
+</div>
+<div class="text-center group">
+<div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<i class="ri-team-line text-3xl text-white"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3 text-gray-900">Trained Personnel</h3>
+<p class="text-gray-600">Extensively trained staff with regular skill development and certification programs</p>
+</div>
+<div class="text-center group">
+<div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<i class="ri-time-line text-3xl text-white"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3 text-gray-900">24/7 Support</h3>
+<p class="text-gray-600">Round-the-clock availability and emergency response for all service requirements</p>
+</div>
+<div class="text-center group">
+<div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<i class="ri-award-line text-3xl text-white"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3 text-gray-900">Quality Assured</h3>
+<p class="text-gray-600">Regular quality audits and client feedback integration for continuous improvement</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-poppins font-bold text-gray-900 mb-4">Service Coverage Areas</h2>
+<p class="text-xl text-gray-600">Serving clients across multiple locations in South India</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<div class="w-16 h-16 mx-auto mb-4 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center">
+<i class="ri-building-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3">Bangalore</h3>
+<p class="text-gray-600 mb-4">Primary operations hub with full service coverage</p>
+<div class="text-sm text-gray-500">
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Corporate</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Residential</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mb-2">Industrial</span>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<div class="w-16 h-16 mx-auto mb-4 bg-secondary bg-opacity-10 rounded-xl flex items-center justify-center">
+<i class="ri-community-line text-2xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3">Hyderabad</h3>
+<p class="text-gray-600 mb-4">Regional office with comprehensive service offerings</p>
+<div class="text-sm text-gray-500">
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">IT Parks</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Healthcare</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mb-2">Retail</span>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<div class="w-16 h-16 mx-auto mb-4 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center">
+<i class="ri-map-pin-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3">Tirupati</h3>
+<p class="text-gray-600 mb-4">Specialized services for religious and commercial sectors</p>
+<div class="text-sm text-gray-500">
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Temples</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Hotels</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mb-2">Events</span>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<div class="w-16 h-16 mx-auto mb-4 bg-secondary bg-opacity-10 rounded-xl flex items-center justify-center">
+<i class="ri-ship-line text-2xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3">Visakhapatnam</h3>
+<p class="text-gray-600 mb-4">Port city operations with industrial focus</p>
+<div class="text-sm text-gray-500">
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Ports</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Industries</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mb-2">Logistics</span>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<div class="w-16 h-16 mx-auto mb-4 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center">
+<i class="ri-road-map-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3">Anantapur</h3>
+<p class="text-gray-600 mb-4">Growing market with expanding service portfolio</p>
+<div class="text-sm text-gray-500">
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Mining</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Agriculture</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mb-2">Commercial</span>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+<div class="w-16 h-16 mx-auto mb-4 bg-secondary bg-opacity-10 rounded-xl flex items-center justify-center">
+<i class="ri-building-2-line text-2xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-poppins font-bold mb-3">Penukonda</h3>
+<p class="text-gray-600 mb-4">Local operations with personalized service approach</p>
+<div class="text-sm text-gray-500">
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Local Business</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mr-2 mb-2">Residential</span>
+<span class="inline-block bg-gray-100 px-3 py-1 rounded-full mb-2">Events</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gradient-to-br from-primary to-secondary text-white">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<h2 class="text-4xl font-poppins font-bold mb-4">Ready to Get Started?</h2>
+<p class="text-xl mb-8 opacity-90">
+Contact our team today to discuss your specific requirements and receive a customized service proposal
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="Service_Quotation.html" class="inline-block bg-white text-primary px-8 py-4 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap text-lg font-medium">
+Request Service Quote
+</a>
+<button onclick="window.location.href='tel:+919642311515'" class="border-2 border-white text-white px-8 py-4 !rounded-button hover:bg-white hover:text-primary transition-colors whitespace-nowrap text-lg font-medium">
+Call: +91 96423-11515
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center space-x-3 mb-6">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+<img src="Man-Associates-logo.png" alt="MAN Associates Logo" class="w-12 h-12 object-contain" />
+</div>
+<div>
+<h3 class="text-xl font-poppins font-bold">MAN Associates</h3>
+<p class="text-sm opacity-75">We Serve Employer for Outsourcing</p>
+</div>
+</div>
+<p class="text-gray-400 mb-4">
+Professional manpower solutions provider since 2020, specializing in security, housekeeping, and facility management services.
+</p>
+<div class="flex space-x-4">
+<a href="https://www.facebook.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-facebook-fill text-sm"></i>
+</a>
+<a href="https://twitter.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-twitter-fill text-sm"></i>
+</a>
+<a href="https://www.linkedin.com/company/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-linkedin-fill text-sm"></i>
+</a>
+<a href="https://www.instagram.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-instagram-fill text-sm"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="About_Us.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="Our_Services.html" class="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
+<li><a href="Events_Gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+<li><a href="Contact_Us.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<!-- <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li> -->
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Our Services</h4>
+<ul class="space-y-3">
+<li><a href="Our_Services.html#security" class="text-gray-400 hover:text-white transition-colors">Security Services</a></li>
+<li><a href="Our_Services.html#e-security" class="text-gray-400 hover:text-white transition-colors">E-Security</a></li>
+<li><a href="Our_Services.html#office-support" class="text-gray-400 hover:text-white transition-colors">Office Support</a></li>
+<li><a href="Our_Services.html#housekeeping" class="text-gray-400 hover:text-white transition-colors">Housekeeping</a></li>
+<li><a href="Our_Services.html#pantry" class="text-gray-400 hover:text-white transition-colors">Pantry Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Contact Info</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-400 text-sm">LMS Security Services Pvt. Ltd.</p>
+<p class="text-gray-400 text-sm">MG Road, Bengaluru - 560001</p>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+    <a href="tel:+919642311515" class="text-gray-400 text-sm hover:text-white transition-colors"><p class="text-gray-400 text-sm">Support: +91 96423-11515</p></a>
+    <!-- <p class="text-gray-400 text-sm">Support: +91 96423-11515</p>
+<p class="text-gray-400 text-sm">HR: +91 87624-13452</p> -->
+<a href="tel:+918762413452" class="text-gray-400 text-sm hover:text-white transition-colors"><p class="text-gray-400 text-sm">HR: +91 87624-13452</p></a>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<a href="mailto:info@manassociates.com" class="text-gray-400 text-sm hover:text-white transition-colors">info@manassociates.com</a>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">
+© <span id="current-year">2025</span> MAN Associates. All rights reserved.
+</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a href="Privacy_Policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+<a href="Terms_of_Service.html" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+<a href="Cookie_Policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-6 right-6 z-50">
+<a href="https://wa.me/919642311515" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+<i class="ri-whatsapp-line text-white text-2xl"></i>
+</a>
+</div>
+<button id="back-to-top" class="fixed bottom-6 left-6 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-opacity-90 z-50">
+<i class="ri-arrow-up-line"></i>
+</button>
+<!--  js scripts -->
+<script id="header-scroll">
+document.addEventListener('DOMContentLoaded', function() {
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 100) {
+header.classList.add('bg-white', 'shadow-lg');
+header.classList.remove('bg-transparent');
+} else {
+header.classList.remove('bg-white', 'shadow-lg');
+header.classList.add('bg-transparent');
+}
+});
+});
+</script>
+<script id="back-to-top-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTopBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 500) {
+backToTopBtn.classList.remove('opacity-0', 'invisible');
+backToTopBtn.classList.add('opacity-100', 'visible');
+} else {
+backToTopBtn.classList.add('opacity-0', 'invisible');
+backToTopBtn.classList.remove('opacity-100', 'visible');
+}
+});
+backToTopBtn.addEventListener('click', () => {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+});
+</script>
+<script id="smooth-scroll-navigation">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', (e) => {
+e.preventDefault();
+const targetId = link.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const offsetTop = targetElement.offsetTop - 80;
+window.scrollTo({
+top: offsetTop,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="service-card-interactions">
+document.addEventListener('DOMContentLoaded', function() {
+const serviceCards = document.querySelectorAll('.service-card');
+serviceCards.forEach(card => {
+card.addEventListener('mouseenter', () => {
+card.style.transform = 'translateY(-8px) scale(1.02)';
+});
+card.addEventListener('mouseleave', () => {
+card.style.transform = 'translateY(0) scale(1)';
+});
+});
+});
+</script>
+<script id="current-year-update">
+document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('current-year').textContent = new Date().getFullYear();
+});
+</script>
+</body>
+</html>

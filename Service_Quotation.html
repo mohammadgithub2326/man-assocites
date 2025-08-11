@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Service Quote - MAN Associates</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0B3C5D',secondary:'#328CC1'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Lato', sans-serif; }
+.font-poppins { font-family: 'Poppins', sans-serif; }
+.form-section {
+transition: all 0.3s ease;
+}
+.form-section.active {
+border-color: #328CC1;
+box-shadow: 0 0 0 3px rgba(50, 140, 193, 0.1);
+}
+.progress-step {
+transition: all 0.3s ease;
+}
+.progress-step.completed {
+background-color: #0B3C5D;
+color: white;
+}
+.progress-step.active {
+background-color: #328CC1;
+color: white;
+}
+.custom-checkbox {
+appearance: none;
+width: 1.25rem;
+height: 1.25rem;
+border: 2px solid #d1d5db;
+border-radius: 0.25rem;
+background: white;
+cursor: pointer;
+position: relative;
+transition: all 0.2s ease;
+}
+.custom-checkbox:checked {
+background-color: #0B3C5D;
+border-color: #0B3C5D;
+}
+.custom-checkbox:checked::after {
+content: '✓';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+font-size: 0.75rem;
+font-weight: bold;
+}
+.custom-radio {
+appearance: none;
+width: 1.25rem;
+height: 1.25rem;
+border: 2px solid #d1d5db;
+border-radius: 50%;
+background: white;
+cursor: pointer;
+position: relative;
+transition: all 0.2s ease;
+}
+.custom-radio:checked {
+border-color: #0B3C5D;
+}
+.custom-radio:checked::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 0.5rem;
+height: 0.5rem;
+background-color: #0B3C5D;
+border-radius: 50%;
+}
+.loading-spinner {
+display: none;
+width: 1rem;
+height: 1rem;
+border: 2px solid transparent;
+border-top: 2px solid currentColor;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+to { transform: rotate(360deg); }
+}
+.success-message {
+display: none;
+opacity: 0;
+transform: translateY(10px);
+transition: all 0.3s ease;
+}
+.success-message.show {
+display: block;
+opacity: 1;
+transform: translateY(0);
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<header class="fixed w-full top-0 z-40 bg-white shadow-lg">
+<div class="max-w-7xl mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<a id="back-link" href="index.html" class="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors">
+  <div class="w-8 h-8 flex items-center justify-center">
+    <i class="ri-arrow-left-line text-lg"></i>
+  </div>
+  <span class="text-sm font-medium" id="back-link-text">Back</span>
+</a>
+<script>
+  // Try to get referrer and set link text and href dynamically
+  document.addEventListener('DOMContentLoaded', function() {
+    const backLink = document.getElementById('back-link');
+    const backText = document.getElementById('back-link-text');
+    let referrer = document.referrer;
+    if (referrer && referrer !== window.location.href) {
+      try {
+        const url = new URL(referrer);
+        let pageName = url.pathname.split('/').pop().replace(/[-_]/g, ' ').replace(/\.\w+$/, '');
+        pageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+        if (!pageName || pageName === 'Index') pageName = 'Home';
+        backText.textContent = `Back to ${pageName}`;
+        backLink.href = referrer;
+      } catch (e) {
+        // fallback to default
+      }
+    } else {
+      backText.textContent = 'Back to Services';
+      backLink.href = 'index.html';
+    }
+  });
+</script>
+</div>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+<img src="Man-Associates-logo.png" alt="MAN Associates Logo" onclick="window.location.href='index.html'" class="w-12 h-12 object-contain" />
+</div>
+<div onclick="window.location.href='index.html'">
+<h1 class="text-xl font-poppins font-bold text-primary">MAN Associates</h1>
+<p class="text-xs text-gray-600">We Serve Employer for Outsourcing</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="hidden md:flex items-center space-x-2 text-sm">
+<div class="w-6 h-6 flex items-center justify-center">
+  <a href="tel:+919642311515">
+<i class="ri-phone-line text-primary"></i>
+</a>
+</div>
+<a href="tel:+919642311515" class="text-gray-700 hover:text-primary transition-colors"><span class="text-gray-700">+91 96423-11515</span>
+</a>
+<!-- <span class="text-gray-700">+91 96423-11515</span> -->
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-16">
+<section id="request-quote" class="py-12 bg-gradient-to-br from-primary to-secondary text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-poppins font-bold mb-4">Request Service Quote</h1>
+    <p class="text-xl opacity-90 mb-8">
+      Tell us about your requirements and we'll provide you with a customized service proposal within 24 hours
+    </p>
+    <div class="flex items-center justify-center space-x-4" id="progress-bar">
+      <div class="progress-step w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-sm font-bold active" data-step="0">1</div>
+      <div class="w-12 h-0.5 bg-white bg-opacity-20"></div>
+      <div class="progress-step w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-sm font-bold" data-step="1">2</div>
+      <div class="w-12 h-0.5 bg-white bg-opacity-20"></div>
+      <div class="progress-step w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center text-sm font-bold" data-step="2">3</div>
+    </div>
+    <div class="flex items-center justify-center space-x-8 mt-4 text-sm opacity-75">
+      <span>Contact Info</span>
+      <span>Service Details</span>
+      <span>Submit Request</span>
+    </div>
+  </div>
+</section>
+<section class="py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <form id="quote-form" class="space-y-8 relative overflow-hidden">
+      <!-- Step 1: Contact Info -->
+      <div class="form-section bg-white rounded-xl p-8 shadow-lg border-2 border-transparent transition-all duration-500" data-step="0">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center">
+            <i class="ri-user-line text-primary text-lg"></i>
+          </div>
+          <h2 class="text-2xl font-poppins font-bold text-gray-900">Contact Information</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+            <input type="text" name="fullName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+            <input type="text" name="companyName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+            <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm">
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Company Address</label>
+            <textarea name="address" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm resize-none"></textarea>
+          </div>
+        </div>
+        <div class="flex justify-end mt-8">
+          <button type="button" class="next-btn bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-colors font-medium flex items-center space-x-2">
+            <span>Next</span>
+            <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Step 2: Service Selection -->
+      <div class="form-section bg-white rounded-xl p-8 shadow-lg border-2 border-transparent transition-all duration-500 absolute inset-0 w-full opacity-0 pointer-events-none" data-step="1">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-10 h-10 bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center">
+            <i class="ri-service-line text-secondary text-lg"></i>
+          </div>
+          <h2 class="text-2xl font-poppins font-bold text-gray-900">Service Selection</h2>
+        </div>
+        <p class="text-gray-600 mb-6">Select the services you're interested in (you can choose multiple options)</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <label class="flex items-start space-x-3 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+            <input type="checkbox" name="services" value="security" class="custom-checkbox mt-1">
+            <div>
+              <h3 class="font-semibold text-gray-900">Security Services</h3>
+              <p class="text-sm text-gray-600">Armed/unarmed guards, K9 handlers, VIP protection</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+            <input type="checkbox" name="services" value="e-security" class="custom-checkbox mt-1">
+            <div>
+              <h3 class="font-semibold text-gray-900">E-Security Solutions</h3>
+              <p class="text-sm text-gray-600">CCTV surveillance, access control, alarm systems</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+            <input type="checkbox" name="services" value="office-support" class="custom-checkbox mt-1">
+            <div>
+              <h3 class="font-semibold text-gray-900">Office Support Services</h3>
+              <p class="text-sm text-gray-600">Reception, administrative support, concierge</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+            <input type="checkbox" name="services" value="housekeeping" class="custom-checkbox mt-1">
+            <div>
+              <h3 class="font-semibold text-gray-900">Housekeeping Services</h3>
+              <p class="text-sm text-gray-600">Corporate cleaning, facility maintenance</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer md:col-span-2">
+            <input type="checkbox" name="services" value="pantry" class="custom-checkbox mt-1">
+            <div>
+              <h3 class="font-semibold text-gray-900">Pantry Services</h3>
+              <p class="text-sm text-gray-600">Inventory management, tea/coffee services, catering coordination</p>
+            </div>
+          </label>
+        </div>
+        <div class="flex justify-between mt-8">
+          <button type="button" class="prev-btn border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition-colors font-medium flex items-center space-x-2">
+            <i class="ri-arrow-left-line"></i>
+            <span>Back</span>
+          </button>
+          <button type="button" class="next-btn bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-colors font-medium flex items-center space-x-2">
+            <span>Next</span>
+            <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Step 3: Project Details & Submit -->
+      <div class="form-section bg-white rounded-xl p-8 shadow-lg border-2 border-transparent transition-all duration-500 absolute inset-0 w-full opacity-0 pointer-events-none" data-step="2">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center">
+            <i class="ri-map-pin-line text-primary text-lg"></i>
+          </div>
+          <h2 class="text-2xl font-poppins font-bold text-gray-900">Project Details</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Project Location *</label>
+            <input type="text" name="location" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm" placeholder="City, State">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Service Start Date *</label>
+            <input type="date" name="startDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Project Duration *</label>
+            <div class="relative">
+              <button type="button" id="duration-dropdown" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm text-left bg-white flex items-center justify-between"></button>
+                <span id="duration-selected">Select Duration</span>
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-arrow-down-s-line text-gray-400"></i>
+                </div>
+              </button>
+              <div id="duration-options" class="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg mt-1 shadow-lg z-10 hidden">
+                <div class="py-2">
+                  <button type="button" class="duration-option w-full px-4 py-2 text-left hover:bg-gray-50 text-sm" data-value="1-3-months">1-3 Months</button>
+                  <button type="button" class="duration-option w-full px-4 py-2 text-left hover:bg-gray-50 text-sm" data-value="3-6-months">3-6 Months</button>
+                  <button type="button" class="duration-option w-full px-4 py-2 text-left hover:bg-gray-50 text-sm" data-value="6-12-months">6-12 Months</button>
+                  <button type="button" class="duration-option w-full px-4 py-2 text-left hover:bg-gray-50 text-sm" data-value="1-2-years">1-2 Years</button>
+                  <button type="button" class="duration-option w-full px-4 py-2 text-left hover:bg-gray-50 text-sm" data-value="2+ years">2+ Years</button>
+                  <button type="button" class="duration-option w-full px-4 py-2 text-left hover:bg-gray-50 text-sm" data-value="ongoing">Ongoing Contract</button>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="duration" id="duration-value">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Number of Personnel Needed *</label>
+            <input type="number" name="personnel" required min="1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm">
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Specific Requirements</label>
+            <textarea name="requirements" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors text-sm resize-none" placeholder="Please describe your specific needs, working hours, special requirements, or any other details that would help us provide an accurate quote..."></textarea>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3 mb-6 mt-8">
+          <div class="w-10 h-10 bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center">
+            <i class="ri-message-line text-secondary text-lg"></i>
+          </div>
+          <h2 class="text-2xl font-poppins font-bold text-gray-900">Preferred Contact Method</h2>
+        </div>
+        <p class="text-gray-600 mb-6">How would you like us to contact you with the quote?</p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <label class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+            <input type="radio" name="contactMethod" value="email" class="custom-radio" checked>
+            <div class="flex items-center space-x-2">
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-mail-line text-primary"></i>
+              </div>
+              <span class="font-medium text-gray-900">Email</span>
+            </div>
+          </label>
+          <label class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+            <input type="radio" name="contactMethod" value="phone" class="custom-radio">
+            <div class="flex items-center space-x-2">
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-phone-line text-primary"></i>
+              </div>
+              <span class="font-medium text-gray-900">Phone Call</span>
+            </div>
+          </label>
+          <label class="flex items-center space-x-3 p-4 border border-gray-200 rounded-lg hover:border-primary transition-colors cursor-pointer">
+            <input type="radio" name="contactMethod" value="whatsapp" class="custom-radio">
+            <div class="flex items-center space-x-2">
+              <div class="w-6 h-6 flex items-center justify-center">
+                <i class="ri-whatsapp-line text-green-500"></i>
+              </div>
+              <span class="font-medium text-gray-900">WhatsApp</span>
+            </div>
+          </label>
+        </div>
+        <div class="flex justify-between mt-8">
+          <button type="button" class="prev-btn border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition-colors font-medium flex items-center space-x-2">
+            <i class="ri-arrow-left-line"></i>
+            <span>Back</span>
+          </button>
+          <button type="submit" id="submit-btn" class="bg-primary text-white px-12 py-4 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap text-lg font-medium inline-flex items-center space-x-3">
+            <span>Submit Quote Request</span>
+            <div class="loading-spinner"></div>
+            <div class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-send-plane-line"></i>
+            </div>
+          </button>
+        </div>
+        <p class="text-gray-600 mt-4 text-sm text-center">
+          We'll review your request and get back to you within 24 hours with a detailed quote
+        </p>
+      </div>
+      <!-- Success Message -->
+      <div id="success-message" class="success-message bg-green-50 border border-green-200 rounded-xl p-8 text-center absolute inset-0 w-full opacity-0 pointer-events-none transition-all duration-500">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
+          <i class="ri-check-line text-2xl text-green-600"></i>
+        </div>
+        <h3 class="text-2xl font-poppins font-bold text-green-800 mb-2">Quote Request Submitted Successfully!</h3>
+        <p class="text-green-700 mb-6">
+          Thank you for your interest in our services. We've received your request and our team will review it carefully.
+        </p>
+        <div class="bg-white rounded-lg p-6 border border-green-200">
+          <h4 class="font-semibold text-gray-900 mb-3">What happens next?</h4>
+          <div class="space-y-3 text-sm text-gray-700">
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                <i class="ri-time-line text-green-600 text-xs"></i>
+              </div>
+              <span>Our team will review your requirements within 2-4 hours</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                <i class="ri-phone-line text-green-600 text-xs"></i>
+              </div>
+              <span>We may contact you for additional details if needed</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                <i class="ri-file-text-line text-green-600 text-xs"></i>
+              </div>
+              <span>You'll receive a detailed quote within 24 hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+          <a href="#" id="back-to-referrer" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap font-medium">
+            Back to Previous Page
+          </a>
+          <button type="button" onclick="location.reload()" class="border-2 border-primary text-primary px-6 py-3 !rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap font-medium">
+            Submit Another Request
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<script>
+(function() {
+  // Multi-step logic
+  const form = document.getElementById('quote-form');
+  const sections = Array.from(form.querySelectorAll('.form-section'));
+  const progressSteps = document.querySelectorAll('.progress-step');
+  const successMessage = document.getElementById('success-message');
+  // Failure message element
+  let failureMessage = document.getElementById('failure-message');
+  if (!failureMessage) {
+    // Create failure message if not present
+    failureMessage = document.createElement('div');
+    failureMessage.id = 'failure-message';
+    failureMessage.className = 'success-message bg-red-50 border border-red-200 rounded-xl p-8 text-center absolute inset-0 w-full opacity-0 pointer-events-none transition-all duration-500';
+    failureMessage.innerHTML = `
+      <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
+        <i class="ri-close-line text-2xl text-red-600"></i>
+      </div>
+      <h3 class="text-2xl font-poppins font-bold text-red-800 mb-2">Submission Failed</h3>
+      <p class="text-red-700 mb-6">
+        Sorry, we couldn't submit your request. Please try again or contact us directly.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+        <button type="button" onclick="location.reload()" class="border-2 border-primary text-primary px-6 py-3 !rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap font-medium">
+          Try Again
+        </button>
+        <a href="Contact_Us.html" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap font-medium">
+          Contact Support
+        </a>
+      </div>
+    `;
+    form.appendChild(failureMessage);
+  }
+
+  // Show failure message if submission fails
+  function showFailureMessage() {
+    failureMessage.classList.remove('pointer-events-none');
+    failureMessage.classList.add('show');
+    failureMessage.style.opacity = 1;
+    failureMessage.classList.remove('opacity-0');
+    setTimeout(() => {
+      form.scrollIntoView({behavior: 'smooth'});
+    }, 200);
+  }
+  let currentStep = 0;
+
+  function showStep(step) {
+    sections.forEach((sec, idx) => {
+      if (idx === step) {
+        sec.classList.remove('absolute', 'opacity-0', 'pointer-events-none');
+        sec.classList.add('relative');
+        setTimeout(() => sec.style.opacity = 1, 10);
+      } else {
+        sec.classList.add('absolute', 'opacity-0', 'pointer-events-none');
+        sec.classList.remove('relative');
+        sec.style.opacity = 0;
+      }
+    });
+    progressSteps.forEach((el, idx) => {
+      el.classList.remove('completed', 'active');
+      if (idx < step) el.classList.add('completed');
+      else if (idx === step) el.classList.add('active');
+    });
+  }
+
+  function validateStep(step) {
+    const inputs = Array.from(sections[step].querySelectorAll('input, textarea, select')).filter(i => i.required);
+    for (const input of inputs) {
+      if (!input.value.trim()) {
+        input.focus();
+        input.classList.add('ring-2', 'ring-red-400');
+        setTimeout(() => input.classList.remove('ring-2', 'ring-red-400'), 1000);
+        return false;
+      }
+    }
+    return true;
+  }
+
+  form.addEventListener('click', function(e) {
+    if (e.target.closest('.next-btn')) {
+      e.preventDefault();
+      if (!validateStep(currentStep)) return;
+      showStep(++currentStep);
+    }
+    if (e.target.closest('.prev-btn')) {
+      e.preventDefault();
+      showStep(--currentStep);
+    }
+  });
+
+  // Show only first step initially
+  showStep(0);
+
+  // Submit logic
+  const submitBtn = document.getElementById('submit-btn');
+  const loadingSpinner = submitBtn.querySelector('.loading-spinner');
+  const sendIcon = submitBtn.querySelector('i');
+  let referrer = document.referrer && document.referrer !== window.location.href ? document.referrer : 'index.html';
+
+  document.getElementById('back-to-referrer').href = referrer;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    if (!validateStep(currentStep)) return;
+    submitBtn.disabled = true;
+    loadingSpinner.style.display = 'block';
+    sendIcon.style.display = 'none';
+    submitBtn.querySelector('span').textContent = 'Submitting...';
+
+    // Gather form data
+    const formData = new FormData(form);
+    // For checkboxes (services)
+    const services = [];
+    form.querySelectorAll('input[name="services"]:checked').forEach(cb => services.push(cb.value));
+    formData.set('services', services.join(','));
+
+    try {
+      await new Promise(res => setTimeout(res, 500)); // UI delay
+      const resp = await fetch('api/quote,submit', {
+        method: 'POST',
+        body: formData
+        
+      });
+      if (!resp.ok) throw new Error('Failed');
+      // Animate out last section
+      sections[currentStep].classList.add('opacity-0');
+      setTimeout(() => {
+        form.style.height = form.offsetHeight + 'px';
+        form.style.minHeight = '400px';
+        sections[currentStep].style.display = 'none';
+        // Animate in success
+        successMessage.classList.remove('pointer-events-none');
+        successMessage.classList.add('show');
+        successMessage.style.opacity = 1;
+        successMessage.classList.remove('opacity-0');
+        setTimeout(() => {
+          // Optionally, scroll to top of form
+          form.scrollIntoView({behavior: 'smooth'});
+        }, 200);
+        // Redirect after 20s
+        setTimeout(() => {
+          window.location.href = referrer;
+        }, 60000);
+      }, 400);
+    } catch (err) {
+      submitBtn.querySelector('span').textContent = 'Submission Failed';
+      loadingSpinner.style.display = 'none';
+      sendIcon.style.display = 'block';
+      submitBtn.disabled = false;
+      showFailureMessage();
+    }
+  });
+})();
+</script>
+</main>
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center space-x-3 mb-6">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+<img src="Man-Associates-logo.png" alt="MAN Associates Logo" class="w-12 h-12 object-contain" />
+</div>
+<div>
+<h3 class="text-xl font-poppins font-bold">MAN Associates</h3>
+<p class="text-sm opacity-75">We Serve Employer for Outsourcing</p>
+</div>
+</div>
+<p class="text-gray-400 mb-4">
+Professional manpower solutions provider since 2020, specializing in security, housekeeping, and facility management services.
+</p>
+<div class="flex space-x-4">
+<a href="https://www.facebook.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-facebook-fill text-sm"></i>
+</a>
+<a href="https://twitter.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-twitter-fill text-sm"></i>
+</a>
+<a href="https://www.linkedin.com/company/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-linkedin-fill text-sm"></i>
+</a>
+<a href="https://www.instagram.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-instagram-fill text-sm"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="About_Us.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="Our_Services.html" class="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
+<li><a href="Events_Gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+<li><a href="Contact_Us.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<!-- <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li> -->
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Our Services</h4>
+<ul class="space-y-3">
+<li><a href="Our_Services.html#security" class="text-gray-400 hover:text-white transition-colors">Security Services</a></li>
+<li><a href="Our_Services.html#e-security" class="text-gray-400 hover:text-white transition-colors">E-Security</a></li>
+<li><a href="Our_Services.html#office-support" class="text-gray-400 hover:text-white transition-colors">Office Support</a></li>
+<li><a href="Our_Services.html#housekeeping" class="text-gray-400 hover:text-white transition-colors">Housekeeping</a></li>
+<li><a href="Our_Services.html#pantry" class="text-gray-400 hover:text-white transition-colors">Pantry Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Contact Info</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-400 text-sm">LMS Security Services Pvt. Ltd.</p>
+<p class="text-gray-400 text-sm">MG Road, Bengaluru - 560001</p>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+    <a href="tel:+919642311515" class="text-gray-400 text-sm hover:text-white transition-colors"><p class="text-gray-400 text-sm">Support: +91 96423-11515</p></a>
+    <!-- <p class="text-gray-400 text-sm">Support: +91 96423-11515</p>
+<p class="text-gray-400 text-sm">HR: +91 87624-13452</p> -->
+<a href="tel:+918762413452" class="text-gray-400 text-sm hover:text-white transition-colors"><p class="text-gray-400 text-sm">HR: +91 87624-13452</p></a>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<a href="mailto:info@manassociates.com" class="text-gray-400 text-sm hover:text-white transition-colors">info@manassociates.com</a>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">
+© <span id="current-year">2025</span> MAN Associates. All rights reserved.
+</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a href="Privacy_Policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+<a href="Terms_of_Service.html" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+<a href="Cookie_Policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-6 right-6 z-50">
+<a href="https://wa.me/919642311515" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+<i class="ri-whatsapp-line text-white text-2xl"></i>
+</a>
+</div>
+<script id="form-interactions">
+document.addEventListener('DOMContentLoaded', function() {
+const formSections = document.querySelectorAll('.form-section');
+const form = document.getElementById('quote-form');
+const submitBtn = document.getElementById('submit-btn');
+const successMessage = document.getElementById('success-message');
+const loadingSpinner = submitBtn.querySelector('.loading-spinner');
+const sendIcon = submitBtn.querySelector('i');
+
+let submitStatus = {
+  validating: false,
+  uploading: false,
+  success: false,
+  error: false
+};
+
+formSections.forEach(section => {
+  const inputs = section.querySelectorAll('input, textarea, select');
+  inputs.forEach(input => {
+    input.addEventListener('focus', () => {
+      section.classList.add('active');
+    });
+    input.addEventListener('blur', () => {
+      section.classList.remove('active');
+    });
+  });
+});
+
+function updateSubmitStatus(status) {
+  submitBtn.disabled = true;
+  loadingSpinner.style.display = 'block';
+  sendIcon.style.display = 'none';
+  
+  switch(status) {
+    case 'validating':
+      submitBtn.querySelector('span').textContent = 'Validating Form...';
+      break;
+    case 'uploading':
+      submitBtn.querySelector('span').textContent = 'Uploading Data...';
+      break;
+    case 'success':
+      submitBtn.querySelector('span').textContent = 'Submission Successful!';
+      break;
+    case 'error':
+      submitBtn.querySelector('span').textContent = 'Submission Failed';
+      submitBtn.disabled = false;
+      loadingSpinner.style.display = 'none';
+      sendIcon.style.display = 'block';
+      break;
+  }
+}
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  try {
+    updateSubmitStatus('validating');
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    updateSubmitStatus('uploading');
+    await new Promise(resolve => setTimeout(resolve, 1200));
+    
+    updateSubmitStatus('success');
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    form.style.display = 'none';
+    successMessage.classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+  } catch(error) {
+    updateSubmitStatus('error');
+    console.error('Form submission failed:', error);
+  }
+});
+});
+</script>
+<script id="dropdown-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const dropdownBtn = document.getElementById('duration-dropdown');
+const dropdownOptions = document.getElementById('duration-options');
+const durationSelected = document.getElementById('duration-selected');
+const durationValue = document.getElementById('duration-value');
+const durationOptionBtns = document.querySelectorAll('.duration-option');
+dropdownBtn.addEventListener('click', function(e) {
+e.preventDefault();
+dropdownOptions.classList.toggle('hidden');
+});
+durationOptionBtns.forEach(btn => {
+btn.addEventListener('click', function(e) {
+e.preventDefault();
+const value = this.getAttribute('data-value');
+const text = this.textContent;
+durationSelected.textContent = text;
+durationValue.value = value;
+dropdownOptions.classList.add('hidden');
+});
+});
+document.addEventListener('click', function(e) {
+if (!dropdownBtn.contains(e.target) && !dropdownOptions.contains(e.target)) {
+dropdownOptions.classList.add('hidden');
+}
+});
+});
+</script>
+<script id="progress-indicator">
+document.addEventListener('DOMContentLoaded', function() {
+const form = document.getElementById('quote-form');
+const progressSteps = document.querySelectorAll('.progress-step');
+const formSections = document.querySelectorAll('.form-section');
+function updateProgress() {
+let completedSections = 0;
+formSections.forEach(section => {
+const inputs = section.querySelectorAll('input[required], textarea[required]');
+let sectionComplete = true;
+inputs.forEach(input => {
+if (!input.value.trim()) {
+sectionComplete = false;
+}
+});
+if (sectionComplete) completedSections++;
+});
+progressSteps.forEach((step, index) => {
+step.classList.remove('completed', 'active');
+if (index < completedSections) {
+step.classList.add('completed');
+} else if (index === completedSections) {
+step.classList.add('active');
+}
+});
+}
+form.addEventListener('input', updateProgress);
+form.addEventListener('change', updateProgress);
+});
+</script>
+<script id="current-year-update">
+document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('current-year').textContent = new Date().getFullYear();
+});
+</script>
+</body>
+</html>

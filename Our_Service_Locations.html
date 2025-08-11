@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Locations - MAN Associates</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0B3C5D',secondary:'#328CC1'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Lato', sans-serif; }
+.font-poppins { font-family: 'Poppins', sans-serif; }
+.locations-hero-bg {
+background-image: url('https://readdy.ai/api/search-image?query=modern%20corporate%20office%20buildings%20across%20multiple%20cities%20in%20south%20india%20with%20professional%20security%20and%20facility%20management%20services%20clean%20blue%20and%20white%20corporate%20environment%20aerial%20view%20of%20urban%20business%20districts&width=1920&height=600&seq=locations001&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.location-card-hover {
+transition: all 0.3s ease;
+}
+.location-card-hover:hover {
+transform: translateY(-4px);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.map-overlay {
+background: linear-gradient(135deg, rgba(11, 60, 93, 0.1) 0%, rgba(50, 140, 193, 0.1) 100%);
+}
+</style>
+</head>
+<body class="bg-white">
+<header class="fixed w-full top-0 z-40 transition-all duration-300" id="header">
+<div class="max-w-7xl mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+<img src="Man-Associates-logo.png" alt="MAN Associates Logo" class="w-12 h-12 object-contain" />
+</div>
+<div>
+<h1 class="text-xl font-poppins font-bold text-primary">MAN Associates</h1>
+<p class="text-xs text-gray-600">We Serve Employer for Outsourcing</p>
+</div>
+</div>
+<nav class="hidden lg:flex items-center space-x-8">
+<a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="About_Us.html" class="text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="Our_Services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+<a href="Events_Gallery.html" class="text-gray-700 hover:text-primary transition-colors">Gallery</a>
+<a href="Contact_Us.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="hidden md:flex items-center space-x-2 text-sm">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<a href="tel:+919642311515">
+
+    <span class="text-gray-700">+91 96423-11515</span>
+</a>
+</div>
+<button id="request-quote-btn" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap"
+    onclick="window.location.href='Service_Quotation.html'">
+Request Quote
+</button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<section class="relative pt-24 pb-16 locations-hero-bg">
+<div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
+<h1 class="text-5xl font-poppins font-bold mb-6">Our Service Locations</h1>
+<p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+Delivering professional manpower solutions across major cities in South India with dedicated local teams and comprehensive service coverage
+</p>
+<div class="flex items-center justify-center space-x-8 text-sm">
+<div class="flex items-center space-x-2">
+<div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+<i class="ri-map-pin-line text-white"></i>
+</div>
+<span>7 Cities Covered</span>
+</div>
+<div class="flex items-center space-x-2">
+<div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+<i class="ri-team-line text-white"></i>
+</div>
+<span>2500+ Active Personnel</span>
+</div>
+<div class="flex items-center space-x-2">
+<div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+<i class="ri-time-line text-white"></i>
+</div>
+<span>24/7 Operations</span>
+</div>
+</div>
+</div>
+</section>
+<div class="max-w-7xl mx-auto px-6 py-20">
+    <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Left Column: Map & Coverage -->
+        <div>
+            <section class="mb-12">
+                <div class="relative h-96 bg-gray-200 rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="MAN Associates Service Coverage Map" class="w-full h-full object-cover object-center">
+                    <div class="absolute inset-0 map-overlay"></div>
+                    <div class="absolute top-6 left-6 bg-white rounded-lg p-4 shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                                <i class="ri-shield-check-line text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-poppins font-semibold text-gray-900">MAN Associates</h4>
+                                <p class="text-sm text-gray-600">Service Coverage Map</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 right-6 bg-white rounded-lg p-3 shadow-lg">
+                        <div class="flex items-center space-x-2 text-sm">
+                            <div class="w-3 h-3 bg-primary rounded-full"></div>
+                            <span class="text-gray-700">Primary Hubs</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm mt-2">
+                            <div class="w-3 h-3 bg-secondary rounded-full"></div>
+                            <span class="text-gray-700">Service Areas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-poppins font-semibold text-lg mb-4">Coverage Statistics</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-poppins font-bold text-primary mb-1">7</div>
+                            <div class="text-sm text-gray-600">Cities</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-poppins font-bold text-secondary" data-counter="500">0+</div>
+                            <div class="text-sm text-gray-600">Active Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-poppins font-bold text-primary" data-counter="2500">0+</div>
+                            <div class="text-sm text-gray-600">Personnel</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Why Choose Local Presence -->
+            <section class="bg-gray-50 rounded-xl p-8 mt-12">
+                <h2 class="text-2xl font-poppins font-bold text-gray-900 mb-6 text-center">Why Choose Local Presence</h2>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto mb-3 bg-primary bg-opacity-10 rounded-2xl flex items-center justify-center">
+                            <i class="ri-time-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-base font-poppins font-semibold mb-1">Rapid Response</h3>
+                        <p class="text-gray-600 text-xs">Local teams ensure quick response times and immediate support for all service requests.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto mb-3 bg-secondary bg-opacity-10 rounded-2xl flex items-center justify-center">
+                            <i class="ri-user-heart-line text-2xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-base font-poppins font-semibold mb-1">Local Expertise</h3>
+                        <p class="text-gray-600 text-xs">Deep understanding of local regulations, culture, and business environment.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto mb-3 bg-primary bg-opacity-10 rounded-2xl flex items-center justify-center">
+                            <i class="ri-customer-service-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-base font-poppins font-semibold mb-1">Dedicated Support</h3>
+                        <p class="text-gray-600 text-xs">Local account managers and support teams for personalized service delivery.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto mb-3 bg-secondary bg-opacity-10 rounded-2xl flex items-center justify-center">
+                            <i class="ri-shield-check-line text-2xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-base font-poppins font-semibold mb-1">Quality Assurance</h3>
+                        <p class="text-gray-600 text-xs">Regular on-site quality checks and performance monitoring by local supervisors.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Right Column: Locations & Services -->
+        <div>
+            <!-- Locations Cards -->
+            <section class="space-y-6 mb-12">
+                <div class="bg-white rounded-xl p-6 shadow-lg location-card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-primary rounded-xl flex items-center justify-center">
+                            <i class="ri-building-line text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-poppins font-bold text-gray-900">Bangalore</h3>
+                            <p class="text-secondary font-medium">Primary Operations Hub</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Our headquarters and main operational center, serving the entire Bangalore metropolitan area with comprehensive security and facility management solutions.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div class="bg-gray-50 rounded-lg p-3">
+                            <div class="text-lg font-poppins font-semibold text-primary" data-counter="150">0+</div>
+                            <div class="text-sm text-gray-600">Active Clients</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-3">
+                            <div class="text-lg font-poppins font-semibold text-secondary" data-counter="800">0+</div>
+                            <div class="text-sm text-gray-600">Personnel</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-sm text-gray-600">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <a href="tel:+919642311515"><i class="ri-phone-line text-primary"></i></a>
+                            </div>
+                           <a href="tel:+919642311515"><span>+91 96423-11515</span></a>
+                        </div>
+                        <button id="contact-office-btn" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap text-sm">
+                            Contact Office
+                        </button>
+                        <!-- Contact Modal -->
+                        <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+                            <div class="bg-white rounded-xl p-8 max-w-xs w-full relative shadow-2xl">
+                                <button id="close-contact-modal" class="absolute top-3 right-3 text-gray-400 hover:text-primary text-2xl transition-colors">&times;</button>
+                                <h3 class="font-poppins font-semibold text-lg mb-4 text-primary text-center">Contact Bangalore Office</h3>
+                                <div class="space-y-4">
+                                    <button onclick="window.location.href='tel:+919642311515'" class="w-full flex items-center justify-start px-4 py-2 rounded-lg border border-gray-200 hover:bg-primary hover:text-white transition-colors">
+                                        <i class="ri-phone-line mr-3 text-primary"></i> +91 96423-11515
+                                    </button>
+                                    <button onclick="window.location.href='mailto:info@manassociates.com'" class="w-full flex items-center justify-start px-4 py-2 rounded-lg border border-gray-200 hover:bg-primary hover:text-white transition-colors">
+                                        <i class="ri-mail-line mr-3 text-primary"></i> info@manassociates.com
+                                    </button>
+                                    <button id="contact-whatsapp-btn" onclick="window.open('https://wa.me/919642311515','_blank')" class="w-full flex items-center justify-start px-4 py-2 rounded-lg border border-gray-200 hover:bg-green-500 hover:text-white transition-colors">
+                                        <i class="ri-whatsapp-line mr-3 text-green-500"></i> WhatsApp
+                                    </button>
+                                    <button id="contact-social-btn" class="w-full flex items-center justify-start px-4 py-2 rounded-lg border border-gray-200 hover:bg-secondary hover:text-white transition-colors">
+                                        <i class="ri-share-line mr-3 text-secondary"></i> Social Media
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Social Media Modal -->
+                        <div id="social-modal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+                            <div class="bg-white rounded-xl p-8 max-w-xs w-full relative shadow-2xl">
+                                <button id="close-social-modal" class="absolute top-3 right-3 text-gray-400 hover:text-primary text-2xl transition-colors">&times;</button>
+                                <h3 class="font-poppins font-semibold text-lg mb-4 text-secondary text-center">Connect on Social Media</h3>
+                                <div class="flex flex-col space-y-3">
+                                    <a href="https://www.instagram.com/manassociates" target="_blank" class="flex items-center px-4 py-2 rounded-lg border border-gray-200 hover:bg-pink-500 hover:text-white transition-colors">
+                                        <i class="ri-instagram-line mr-3 text-pink-500"></i> Instagram
+                                    </a>
+                                    <a href="https://www.facebook.com/manassociates" target="_blank" class="flex items-center px-4 py-2 rounded-lg border border-gray-200 hover:bg-blue-600 hover:text-white transition-colors">
+                                        <i class="ri-facebook-fill mr-3 text-blue-600"></i> Facebook
+                                    </a>
+                                    <a href="https://twitter.com/manassociates" target="_blank" class="flex items-center px-4 py-2 rounded-lg border border-gray-200 hover:bg-sky-500 hover:text-white transition-colors">
+                                        <i class="ri-twitter-fill mr-3 text-sky-500"></i> Twitter
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/manassociates" target="_blank" class="flex items-center px-4 py-2 rounded-lg border border-gray-200 hover:bg-blue-800 hover:text-white transition-colors">
+                                        <i class="ri-linkedin-fill mr-3 text-blue-800"></i> LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg location-card-hover">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center">
+                            <i class="ri-community-line text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-poppins font-bold text-gray-900">Hyderabad</h3>
+                            <p class="text-primary font-medium">Regional Operations Center</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Strategic regional hub covering Telangana and surrounding areas, providing specialized security services for IT corridors and corporate complexes.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div class="bg-gray-50 rounded-lg p-3">
+                            <div class="text-lg font-poppins font-semibold text-secondary" data-counter="120">0+</div>
+                            <div class="text-sm text-gray-600">Active Clients</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-3">
+                            <div class="text-lg font-poppins font-semibold text-primary" data-counter="650">0+</div>
+                            <div class="text-sm text-gray-600">Personnel</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-sm text-gray-600">
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <a href="tel:+919642311515"><i class="ri-phone-line text-primary"></i></a>
+                            </div>
+                           <a href="tel:+919642311515"><span>+91 96423-11515</span></a>
+                        </div>
+                        <button id="contact-office-btn-hyd" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap text-sm">
+                            Contact Office
+                        </button>
+                        <!-- Contact Modal -->
+                        <div id="contact-modal-hyd" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+                            <div class="bg-white rounded-xl p-8 max-w-xs w-full relative shadow-2xl">
+                                <button id="close-contact-modal-hyd" class="absolute top-3 right-3 text-gray-400 hover:text-primary text-2xl transition-colors">&times;</button>
+                                <h3 class="font-poppins font-semibold text-lg mb-4 text-primary text-center">Contact Hyderabad Office</h3>
+                                <div class="space-y-4">
+                                    <button onclick="window.location.href='tel:+918762413452'" class="w-full flex items-center justify-start px-4 py-2 rounded-lg border border-gray-200 hover:bg-primary hover:text-white transition-colors">
+                                        <i class="ri-phone-line mr-3 text-primary"></i> +91 87624-13452
+                                    </button>
+                                    <button onclick="window.location.href='mailto:info@manassociates.com'" class="w-full flex items-center justify-start px-4 py-2 rounded-lg border border-gray-200 hover:bg-primary hover:text-white transition-colors">
+                                        <i class="ri-mail-line mr-3 text-primary"></i> info@manassociates.com
+                                    </button>
+                                    <button id="contact-whatsapp-btn-hyd" onclick="window.open('https://wa.me/918762413452','_blank')" class="w-full flex items-center justify-start px-4 py-2 rounded-lg border border-gray-200 hover:bg-green-500 hover:text-white transition-colors">
+                                        <i class="ri-whatsapp-line mr-3 text-green-500"></i> WhatsApp
+                                    </button>
+                                    <button id="contact-social-btn-hyd" class="w-full flex items-center justify-start px-4 py-2 rounded-lg border border-gray-200 hover:bg-secondary hover:text-white transition-colors">
+                                        <i class="ri-share-line mr-3 text-secondary"></i> Social Media
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Social Media Modal -->
+                        <div id="social-modal-hyd" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden">
+                            <div class="bg-white rounded-xl p-8 max-w-xs w-full relative shadow-2xl">
+                                <button id="close-social-modal-hyd" class="absolute top-3 right-3 text-gray-400 hover:text-primary text-2xl transition-colors">&times;</button>
+                                <h3 class="font-poppins font-semibold text-lg mb-4 text-secondary text-center">Connect on Social Media</h3>
+                                <div class="flex flex-col space-y-3">
+                                    <a href="https://www.instagram.com/manassociates" target="_blank" class="flex items-center px-4 py-2 rounded-lg border border-gray-200 hover:bg-pink-500 hover:text-white transition-colors">
+                                        <i class="ri-instagram-line mr-3 text-pink-500"></i> Instagram
+                                    </a>
+                                    <a href="https://www.facebook.com/manassociates" target="_blank" class="flex items-center px-4 py-2 rounded-lg border border-gray-200 hover:bg-blue-600 hover:text-white transition-colors">
+                                        <i class="ri-facebook-fill mr-3 text-blue-600"></i> Facebook
+                                    </a>
+                                    <a href="https://twitter.com/manassociates" target="_blank" class="flex items-center px-4 py-2 rounded-lg border border-gray-200 hover:bg-sky-500 hover:text-white transition-colors">
+                                        <i class="ri-twitter-fill mr-3 text-sky-500"></i> Twitter
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/manassociates" target="_blank" class="flex items-center px-4 py-2 rounded-lg border border-gray-200 hover:bg-blue-800 hover:text-white transition-colors">
+                                        <i class="ri-linkedin-fill mr-3 text-blue-800"></i> LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Contact Modal for Hyderabad
+                            const contactBtnHyd = document.getElementById('contact-office-btn-hyd');
+                            const contactModalHyd = document.getElementById('contact-modal-hyd');
+                            const closeContactHyd = document.getElementById('close-contact-modal-hyd');
+                            contactBtnHyd.onclick = () => contactModalHyd.classList.remove('hidden');
+                            closeContactHyd.onclick = () => contactModalHyd.classList.add('hidden');
+                            window.addEventListener('click', function(e) {
+                                if (e.target === contactModalHyd) contactModalHyd.classList.add('hidden');
+                                if (e.target === socialModalHyd) socialModalHyd.classList.add('hidden');
+                            });
+
+                            // Social Modal for Hyderabad
+                            const socialBtnHyd = document.getElementById('contact-social-btn-hyd');
+                            const socialModalHyd = document.getElementById('social-modal-hyd');
+                            const closeSocialHyd = document.getElementById('close-social-modal-hyd');
+                            socialBtnHyd.onclick = () => {
+                                contactModalHyd.classList.add('hidden');
+                                socialModalHyd.classList.remove('hidden');
+                            };
+                            closeSocialHyd.onclick = () => socialModalHyd.classList.add('hidden');
+                        });
+                        </script>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg p-4 shadow-sm location-card-hover">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-poppins font-semibold">Tirupati</h4>
+                                <p class="text-sm text-gray-600">Religious & Tourism Hub</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-600 ">45+ Clients • 180+ Personnel</div>
+                            <button class="text-primary text-sm font-medium hover:underline">Details →</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm location-card-hover">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center">
+                                <i class="ri-map-pin-line text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-poppins font-semibold">Visakhapatnam</h4>
+                                <p class="text-sm text-gray-600">Port & Industrial City</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-600">60+ Clients • 220+ Personnel</div>
+                            <button class="text-secondary text-sm font-medium hover:underline">Details →</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm location-card-hover">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-poppins font-semibold">Anantapur</h4>
+                                <p class="text-sm text-gray-600">Educational & Commercial</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-600">35+ Clients • 140+ Personnel</div>
+                            <button class="text-primary text-sm font-medium hover:underline">Details →</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-sm location-card-hover">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center">
+                                <i class="ri-map-pin-line text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-poppins font-semibold">Penukonda</h4>
+                                <p class="text-sm text-gray-600">Emerging Business Center</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-600">25+ Clients • 95+ Personnel</div>
+                            <button class="text-secondary text-sm font-medium hover:underline">Details →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+ <!-- Location-Specific Services (Single Column) -->
+            <section class="bg-white rounded-xl p-8 mb-12 flex flex-col items-center justify-center shadow-lg animate-fade-in">
+                <h2 class="text-2xl font-poppins font-bold text-gray-900 mb-8 text-center animate-slide-down">Location-Specific Services</h2>
+                <div class="flex flex-col md:flex-row gap-10 items-center justify-center w-full">
+                    <div class="w-full max-w-xs bg-gray-50 rounded-xl p-6 flex flex-col items-center shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-in-up">
+                        <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-4 animate-pop">
+                            <i class="ri-building-4-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-lg font-poppins font-semibold mb-2 text-center">Metro Cities</h3>
+                        <p class="text-gray-600 mb-4 text-sm text-center">Bangalore & Hyderabad receive our premium corporate security packages with advanced technology integration.</p>
+                        <ul class="space-y-2 text-xs text-gray-600 w-full">
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-primary"></i>
+                                <span>24/7 Command Center Operations</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-primary"></i>
+                                <span>Advanced CCTV & Access Control</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-primary"></i>
+                                <span>Executive Protection Services</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-primary"></i>
+                                <span>Corporate Facility Management</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full max-w-xs bg-gray-50 rounded-xl p-6 flex flex-col items-center shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-in-up" style="animation-delay:0.1s;">
+                        <div class="w-14 h-14 bg-secondary bg-opacity-10 rounded-xl flex items-center justify-center mb-4 animate-pop">
+                            <i class="ri-community-line text-2xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-lg font-poppins font-semibold mb-2 text-center">Tier-2 Cities</h3>
+                        <p class="text-gray-600 mb-4 text-sm text-center">Tirupati, Vizag, and Anantapur benefit from specialized services adapted to local business environments.</p>
+                        <ul class="space-y-2 text-xs text-gray-600 w-full">
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-secondary"></i>
+                                <span>Tourism & Hospitality Security</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-secondary"></i>
+                                <span>Educational Institution Services</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-secondary"></i>
+                                <span>Healthcare Facility Management</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-secondary"></i>
+                                <span>Industrial Security Solutions</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full max-w-xs bg-gray-50 rounded-xl p-6 flex flex-col items-center shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-in-up" style="animation-delay:0.2s;">
+                        <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center mb-4 animate-pop">
+                            <i class="ri-home-smile-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-lg font-poppins font-semibold mb-2 text-center">Emerging Markets</h3>
+                        <p class="text-gray-600 mb-4 text-sm text-center">Penukonda and Tada receive focused residential and small business security solutions.</p>
+                        <ul class="space-y-2 text-xs text-gray-600 w-full">
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-primary"></i>
+                                <span>Residential Community Security</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-primary"></i>
+                                <span>Small Business Solutions</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-primary"></i>
+                                <span>Event Security Services</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="ri-check-line text-primary"></i>
+                                <span>Personal Security Guards</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Call to Action (Single Column, Centered Buttons) -->
+            <section class="bg-primary rounded-xl p-10 text-white text-center flex flex-col items-center justify-center shadow-lg animate-fade-in-up">
+                <h2 class="text-2xl font-poppins font-bold mb-4 animate-slide-down">Ready to Secure Your Location?</h2>
+                <p class="mb-8 opacity-90 text-base">Contact our local team for a customized security assessment and quote</p>
+                <div class="flex flex-col md:flex-row gap-4 items-center justify-center w-full max-w-lg mx-auto">
+                    <button onclick="window.location.href='Service_Quotation.html'" class="bg-white text-primary px-8 py-4 !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap font-medium w-full md:w-auto shadow-md animate-pop">
+                        Get Location-Specific Quote
+                    </button>
+                    <button id="check-availability-btn" class="bg-white text-primary px-8 py-4 !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap font-medium w-full md:w-auto shadow-md animate-pop">
+                        Check Availability & Schedule a Visit
+                    </button>
+                </div>
+            </section>
+            <!-- Check Availability Modal (hidden, but in DOM) -->
+            <div id="availability-form-modal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden animate-fade-in">
+                <div class="bg-white rounded-xl p-8 max-w-md w-full relative shadow-2xl animate-pop">
+                    <button id="close-availability-form" class="absolute top-3 right-3 text-gray-400 hover:text-primary text-2xl transition-colors">&times;</button>
+                    <h3 class="font-poppins font-semibold text-lg mb-4 text-primary text-center">Check Service Availability & Schedule a Visit</h3>
+                    <form id="availability-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1" for="avail-name">Name</label>
+                            <input id="avail-name" name="name" type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-primary focus:border-primary transition-all" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1" for="avail-email">Email</label>
+                            <input id="avail-email" name="email" type="email" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-primary focus:border-primary transition-all" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1" for="avail-phone">Phone</label>
+                            <input id="avail-phone" name="phone" type="tel" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-primary focus:border-primary transition-all" required pattern="[0-9+\-\s]{8,}">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1" for="avail-message">Message</label>
+                            <textarea id="avail-message" name="message" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-primary focus:border-primary transition-all" rows="2" required></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1" for="avail-date">Preferred Date</label>
+                            <input id="avail-date" name="date" type="date" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-primary focus:border-primary transition-all" required>
+                            <p class="text-xs text-gray-500 mt-1">Only dates within 3 days before or after today are available.</p>
+                        </div>
+                        <button type="submit" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors w-full font-medium">Submit</button>
+                        <div id="avail-form-msg" class="text-sm mt-2 text-center"></div>
+                    </form>
+                </div>
+            </div>
+            <style>
+            @keyframes fade-in {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes fade-in-up {
+                from { opacity: 0; transform: translateY(40px);}
+                to { opacity: 1; transform: translateY(0);}
+            }
+            @keyframes slide-down {
+                from { opacity: 0; transform: translateY(-30px);}
+                to { opacity: 1; transform: translateY(0);}
+            }
+            @keyframes pop {
+                0% { transform: scale(0.8); opacity: 0;}
+                80% { transform: scale(1.05);}
+                100% { transform: scale(1); opacity: 1;}
+            }
+            .animate-fade-in { animation: fade-in 0.7s ease; }
+            .animate-fade-in-up { animation: fade-in-up 0.7s cubic-bezier(.4,0,.2,1); }
+            .animate-slide-down { animation: slide-down 0.7s cubic-bezier(.4,0,.2,1); }
+            .animate-pop { animation: pop 0.5s cubic-bezier(.4,0,.2,1); }
+            </style>
+            <script>
+            (function() {
+                    // Modal open/close
+                    const btn = document.getElementById('check-availability-btn');
+                    const modal = document.getElementById('availability-form-modal');
+                    const closeBtn = document.getElementById('close-availability-form');
+                    btn.onclick = () => { modal.classList.remove('hidden'); };
+                    closeBtn.onclick = () => { modal.classList.add('hidden'); };
+                    window.onclick = (e) => { if (e.target === modal) modal.classList.add('hidden'); };
+
+                    // Date logic: only +/- 3 days from today are enabled
+                    const dateInput = document.getElementById('avail-date');
+                    const today = new Date();
+                    function pad(n) { return n < 10 ? '0' + n : n; }
+                    function toDateStr(d) {
+                            return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+                    }
+                    const minDate = new Date(today);
+                    minDate.setDate(today.getDate() - 3);
+                    const maxDate = new Date(today);
+                    maxDate.setDate(today.getDate() + 3);
+                    dateInput.min = toDateStr(minDate);
+                    dateInput.max = toDateStr(maxDate);
+
+                    // Disable all dates except +/- 3 days from today
+                    dateInput.addEventListener('input', function() {
+                            const val = new Date(this.value);
+                            if (val < minDate || val > maxDate) {
+                                    this.setCustomValidity('Only dates within 3 days before or after today are available.');
+                            } else {
+                                    this.setCustomValidity('');
+                            }
+                    });
+
+                    // Form validation and API call
+                    const form = document.getElementById('availability-form');
+                    const msg = document.getElementById('avail-form-msg');
+                    form.onsubmit = async function(e) {
+                            e.preventDefault();
+                            msg.textContent = '';
+                            // Simple validation
+                            if (!form.checkValidity()) {
+                                    msg.textContent = 'Please fill all fields correctly.';
+                                    msg.className = 'text-red-600 mt-2';
+                                    return;
+                            }
+                            // Prepare data
+                            const data = {
+                                    name: form.name.value.trim(),
+                                    email: form.email.value.trim(),
+                                    phone: form.phone.value.trim(),
+                                    message: form.message.value.trim(),
+                                    date: form.date.value
+                            };
+                            // API call
+                            try {
+                                    const res = await fetch('api/avilability/form.com', {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify(data)
+                                    });
+                                    if (res.ok) {
+                                            msg.textContent = 'Your request has been submitted. We will contact you soon!';
+                                            msg.className = 'text-green-600 mt-2';
+                                            form.reset();
+                                    } else {
+                                            msg.textContent = 'Submission failed. Please try again later.';
+                                            msg.className = 'text-red-600 mt-2';
+                                    }
+                            } catch {
+                                    msg.textContent = 'Network error. Please try again.';
+                                    msg.className = 'text-red-600 mt-2';
+                            }
+                    };
+            })();
+            </script>
+</main>
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center space-x-3 mb-6">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+<img src="Man-Associates-logo.png" alt="MAN Associates Logo" class="w-12 h-12 object-contain" />
+</div>
+<div>
+<h3 class="text-xl font-poppins font-bold">MAN Associates</h3>
+<p class="text-sm opacity-75">We Serve Employer for Outsourcing</p>
+</div>
+</div>
+<p class="text-gray-400 mb-4">
+Professional manpower solutions provider since 2020, specializing in security, housekeeping, and facility management services.
+</p>
+<div class="flex space-x-4">
+<a href="https://www.facebook.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-facebook-fill text-sm"></i>
+</a>
+<a href="https://twitter.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-twitter-fill text-sm"></i>
+</a>
+<a href="https://www.linkedin.com/company/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-linkedin-fill text-sm"></i>
+</a>
+<a href="https://www.instagram.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-instagram-fill text-sm"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="About_Us.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="Our_Services.html" class="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
+<li><a href="Events_Gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+<li><a href="Contact_Us.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<!-- <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li> -->
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Our Services</h4>
+<ul class="space-y-3">
+<li><a href="Our_Services.html#security" class="text-gray-400 hover:text-white transition-colors">Security Services</a></li>
+<li><a href="Our_Services.html#e-security" class="text-gray-400 hover:text-white transition-colors">E-Security</a></li>
+<li><a href="Our_Services.html#office-support" class="text-gray-400 hover:text-white transition-colors">Office Support</a></li>
+<li><a href="Our_Services.html#housekeeping" class="text-gray-400 hover:text-white transition-colors">Housekeeping</a></li>
+<li><a href="Our_Services.html#pantry" class="text-gray-400 hover:text-white transition-colors">Pantry Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Contact Info</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-400 text-sm">LMS Security Services Pvt. Ltd.</p>
+<p class="text-gray-400 text-sm">MG Road, Bengaluru - 560001</p>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+    <a href="tel:+919642311515" class="text-gray-400 text-sm hover:text-white transition-colors"><p class="text-gray-400 text-sm">Support: +91 96423-11515</p></a>
+    <!-- <p class="text-gray-400 text-sm">Support: +91 96423-11515</p>
+<p class="text-gray-400 text-sm">HR: +91 87624-13452</p> -->
+<a href="tel:+918762413452" class="text-gray-400 text-sm hover:text-white transition-colors"><p class="text-gray-400 text-sm">HR: +91 87624-13452</p></a>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<a href="mailto:info@manassociates.com" class="text-gray-400 text-sm hover:text-white transition-colors">info@manassociates.com</a>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">
+© <span id="current-year">2025</span> MAN Associates. All rights reserved.
+</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a href="Privacy_Policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+<a href="Terms_of_Service.html" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+<a href="Cookie_Policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-6 right-6 z-50">
+<a href="https://wa.me/919642311515" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+<i class="ri-whatsapp-line text-white text-2xl"></i>
+</a>
+</div>
+<button id="back-to-top" class="fixed bottom-6 left-6 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-opacity-90 z-50">
+<i class="ri-arrow-up-line"></i>
+</button>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Contact Modal
+    const contactBtn = document.getElementById('contact-office-btn');
+    const contactModal = document.getElementById('contact-modal');
+    const closeContact = document.getElementById('close-contact-modal');
+    contactBtn.onclick = () => contactModal.classList.remove('hidden');
+    closeContact.onclick = () => contactModal.classList.add('hidden');
+    window.addEventListener('click', function(e) {
+        if (e.target === contactModal) contactModal.classList.add('hidden');
+        if (e.target === socialModal) socialModal.classList.add('hidden');
+    });
+
+    // Social Modal
+    const socialBtn = document.getElementById('contact-social-btn');
+    const socialModal = document.getElementById('social-modal');
+    const closeSocial = document.getElementById('close-social-modal');
+    socialBtn.onclick = () => {
+        contactModal.classList.add('hidden');
+        socialModal.classList.remove('hidden');
+    };
+    closeSocial.onclick = () => socialModal.classList.add('hidden');
+});
+</script>
+<script id="header-scroll">
+document.addEventListener('DOMContentLoaded', function() {
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 100) {
+header.classList.add('bg-white', 'shadow-lg');
+header.classList.remove('bg-transparent');
+} else {
+header.classList.remove('bg-white', 'shadow-lg');
+header.classList.add('bg-transparent');
+}
+});
+});
+</script>
+<script id="back-to-top-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTopBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 500) {
+backToTopBtn.classList.remove('opacity-0', 'invisible');
+backToTopBtn.classList.add('opacity-100', 'visible');
+} else {
+backToTopBtn.classList.add('opacity-0', 'invisible');
+backToTopBtn.classList.remove('opacity-100', 'visible');
+}
+});
+backToTopBtn.addEventListener('click', () => {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+});
+</script>
+<script id="location-interactions">
+document.addEventListener('DOMContentLoaded', function() {
+const locationCards = document.querySelectorAll('.location-card-hover');
+locationCards.forEach(card => {
+card.addEventListener('mouseenter', function() {
+this.style.transform = 'translateY(-8px)';
+});
+card.addEventListener('mouseleave', function() {
+this.style.transform = 'translateY(0)';
+});
+});
+const detailButtons = document.querySelectorAll('button:contains("Details")');
+detailButtons.forEach(button => {
+button.addEventListener('click', function() {
+const locationName = this.closest('.location-card-hover').querySelector('h4').textContent;
+alert(`Detailed information for ${locationName} will be available soon. Contact us for immediate assistance.`);
+});
+});
+});
+</script><script id="counter-animation">
+document.addEventListener('DOMContentLoaded', function() {
+const counters = document.querySelectorAll('[data-counter]');
+const animateCounter = (counter) => {
+const target = parseInt(counter.getAttribute('data-counter'));
+const duration = 2000;
+const increment = target / (duration / 16);
+let current = 0;
+const updateCounter = () => {
+current += increment;
+if (current < target) {
+counter.textContent = Math.floor(current);
+requestAnimationFrame(updateCounter);
+} else {
+counter.textContent = target;
+}
+};
+updateCounter();
+};
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+animateCounter(entry.target);
+observer.unobserve(entry.target);
+}
+});
+});
+counters.forEach(counter => observer.observe(counter));
+});
+</script>
+
+</body>
+</html>

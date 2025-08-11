@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - MAN Associates Professional Manpower Solutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0B3C5D',secondary:'#328CC1'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Lato', sans-serif; }
+.font-poppins { font-family: 'Poppins', sans-serif; }
+.gallery-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.gallery-item img {
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.lightbox {
+  backdrop-filter: blur(8px);
+}
+.filter-btn.active {
+  background-color: #0B3C5D;
+  color: white;
+}
+</style>
+</head>
+<body class="bg-white">
+
+<header class="fixed w-full top-0 z-40 transition-all duration-300" id="header">
+<div class="max-w-7xl mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+<img src="Man-Associates-logo.png" alt="MAN Associates Logo" class="w-12 h-12 object-contain" />
+</div>
+<div>
+<h1 class="text-xl font-poppins font-bold text-primary">MAN Associates</h1>
+<p class="text-xs text-gray-600">We Serve Employer for Outsourcing</p>
+</div>
+</div>
+<nav class="hidden lg:flex items-center space-x-8">
+<a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="About_Us.html" class="text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="Our_Services.html" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+<a href="Events_Gallery.html" class="text-gray-700 hover:text-primary transition-colors">Gallery</a>
+<a href="Contact_Us.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="hidden md:flex items-center space-x-2 text-sm">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<a href="tel:+919642311515">
+
+    <span class="text-gray-700">+91 96423-11515</span>
+</a>
+</div>
+<button id="request-quote-btn" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap"
+    onclick="window.location.href='Service_Quotation.html'">
+Request Quote
+</button>
+</div>
+</div>
+</div>
+</header>
+
+<main class="pt-0">
+<section class="py-16 bg-gradient-to-br from-primary to-secondary">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<h1 class="text-5xl font-poppins font-bold text-white mb-6">Our Gallery</h1>
+<p class="text-xl text-white opacity-90 max-w-3xl mx-auto">
+Showcasing our professional team in action - from security deployments to office operations, witness the excellence that defines MAN Associates
+</p>
+</div>
+</section>
+
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-wrap justify-center gap-4 mb-12">
+<button class="filter-btn active px-6 py-3 !rounded-button border border-gray-300 hover:bg-primary hover:text-white transition-colors whitespace-nowrap" data-filter="all">
+All Photos
+</button>
+<button class="filter-btn px-6 py-3 !rounded-button border border-gray-300 hover:bg-primary hover:text-white transition-colors whitespace-nowrap" data-filter="security">
+Security Personnel
+</button>
+<button class="filter-btn px-6 py-3 !rounded-button border border-gray-300 hover:bg-primary hover:text-white transition-colors whitespace-nowrap" data-filter="housekeeping">
+Housekeeping Staff
+</button>
+<button class="filter-btn px-6 py-3 !rounded-button border border-gray-300 hover:bg-primary hover:text-white transition-colors whitespace-nowrap" data-filter="office">
+Office Environment
+</button>
+<button class="filter-btn px-6 py-3 !rounded-button border border-gray-300 hover:bg-primary hover:text-white transition-colors whitespace-nowrap" data-filter="events">
+Event Deployments
+</button>
+<button class="filter-btn px-6 py-3 !rounded-button border border-gray-300 hover:bg-primary hover:text-white transition-colors whitespace-nowrap" data-filter="training">
+Training Sessions
+</button>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+<div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="security" data-image="https://readdy.ai/api/search-image?query=professional%20security%20guard%20in%20crisp%20navy%20blue%20uniform%20standing%20confidently%20at%20corporate%20building%20entrance%2C%20alert%20posture%2C%20clean%20modern%20office%20background%2C%20high%20quality%20business%20photography%2C%20natural%20lighting&width=600&height=400&seq=sec001&orientation=landscape" data-caption="Professional Security Guard at Corporate Entrance" data-description="Our trained security personnel maintaining vigilant watch at a premium corporate facility">
+<div class="relative h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20security%20guard%20in%20crisp%20navy%20blue%20uniform%20standing%20confidently%20at%20corporate%20building%20entrance%2C%20alert%20posture%2C%20clean%20modern%20office%20background%2C%20high%20quality%20business%20photography%2C%20natural%20lighting&width=600&height=400&seq=sec001&orientation=landscape" alt="Professional Security Guard at Corporate Entrance" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+<i class="ri-eye-line text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-poppins font-semibold mb-2">Professional Security Guard</h3>
+<p class="text-gray-600 text-sm">Corporate entrance security deployment</p>
+</div>
+</div>
+
+<div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="security" data-image="https://readdy.ai/api/search-image?query=female%20security%20officer%20in%20professional%20uniform%20conducting%20security%20check%20at%20modern%20office%20reception%2C%20confident%20and%20professional%20demeanor%2C%20clean%20corporate%20environment%2C%20business%20photography&width=600&height=400&seq=sec002&orientation=landscape" data-caption="Female Security Officer on Duty" data-description="Our female security officers providing comprehensive security services with professionalism and expertise">
+<div class="relative h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=female%20security%20officer%20in%20professional%20uniform%20conducting%20security%20check%20at%20modern%20office%20reception%2C%20confident%20and%20professional%20demeanor%2C%20clean%20corporate%20environment%2C%20business%20photography&width=600&height=400&seq=sec002&orientation=landscape" alt="Female Security Officer on Duty" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+<i class="ri-eye-line text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-poppins font-semibold mb-2">Female Security Officer</h3>
+<p class="text-gray-600 text-sm">Reception area security management</p>
+</div>
+</div>
+
+<div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="housekeeping" data-image="https://readdy.ai/api/search-image?query=professional%20housekeeping%20staff%20in%20clean%20uniforms%20working%20in%20modern%20corporate%20office%20lobby%2C%20maintaining%20cleanliness%20standards%2C%20bright%20clean%20environment%2C%20professional%20service%20photography&width=600&height=400&seq=house001&orientation=landscape" data-caption="Housekeeping Team in Action" data-description="Our dedicated housekeeping staff maintaining pristine cleanliness standards in corporate environments">
+<div class="relative h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20housekeeping%20staff%20in%20clean%20uniforms%20working%20in%20modern%20corporate%20office%20lobby%2C%20maintaining%20cleanliness%20standards%2C%20bright%20clean%20environment%2C%20professional%20service%20photography&width=600&height=400&seq=house001&orientation=landscape" alt="Housekeeping Team in Action" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+<i class="ri-eye-line text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-poppins font-semibold mb-2">Housekeeping Team</h3>
+<p class="text-gray-600 text-sm">Corporate lobby maintenance services</p>
+</div>
+</div>
+
+<div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="office" data-image="https://readdy.ai/api/search-image?query=modern%20corporate%20office%20reception%20area%20with%20professional%20staff%20at%20work%2C%20clean%20contemporary%20design%2C%20bright%20lighting%2C%20business%20environment%2C%20office%20support%20services%2C%20professional%20photography&width=600&height=400&seq=office001&orientation=landscape" data-caption="Modern Office Reception Area" data-description="Our office support team managing reception and administrative services in a professional corporate environment">
+<div class="relative h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20corporate%20office%20reception%20area%20with%20professional%20staff%20at%20work%2C%20clean%20contemporary%20design%2C%20bright%20lighting%2C%20business%20environment%2C%20office%20support%20services%2C%20professional%20photography&width=600&height=400&seq=office001&orientation=landscape" alt="Modern Office Reception Area" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+<i class="ri-eye-line text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-poppins font-semibold mb-2">Office Reception Area</h3>
+<p class="text-gray-600 text-sm">Professional office support services</p>
+</div>
+</div>
+
+<div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="events" data-image="https://readdy.ai/api/search-image?query=security%20personnel%20managing%20crowd%20at%20corporate%20event%2C%20professional%20event%20security%20deployment%2C%20organized%20crowd%20control%2C%20business%20event%20setting%2C%20professional%20security%20services%2C%20event%20photography&width=600&height=400&seq=event001&orientation=landscape" data-caption="Event Security Deployment" data-description="Our specialized event security team ensuring safety and order at corporate gatherings and special events">
+<div class="relative h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=security%20personnel%20managing%20crowd%20at%20corporate%20event%2C%20professional%20event%20security%20deployment%2C%20organized%20crowd%20control%2C%20business%20event%20setting%2C%20professional%20security%20services%2C%20event%20photography&width=600&height=400&seq=event001&orientation=landscape" alt="Event Security Deployment" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+<i class="ri-eye-line text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-poppins font-semibold mb-2">Event Security Team</h3>
+<p class="text-gray-600 text-sm">Corporate event security management</p>
+</div>
+</div>
+
+<div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="training" data-image="https://readdy.ai/api/search-image?query=security%20training%20session%20in%20progress%20with%20instructor%20teaching%20group%20of%20security%20personnel%2C%20professional%20training%20environment%2C%20classroom%20setting%2C%20skill%20development%2C%20corporate%20training%20photography&width=600&height=400&seq=train001&orientation=landscape" data-caption="Security Training Session" data-description="Comprehensive training programs ensuring our security personnel are equipped with the latest skills and knowledge">
+<div class="relative h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=security%20training%20session%20in%20progress%20with%20instructor%20teaching%20group%20of%20security%20personnel%2C%20professional%20training%20environment%2C%20classroom%20setting%2C%20skill%20development%2C%20corporate%20training%20photography&width=600&height=400&seq=train001&orientation=landscape" alt="Security Training Session" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+<i class="ri-eye-line text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-poppins font-semibold mb-2">Training Session</h3>
+<p class="text-gray-600 text-sm">Professional skill development program</p>
+</div>
+</div>
+
+<div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="security" data-image="https://readdy.ai/api/search-image?query=armed%20security%20guard%20in%20tactical%20uniform%20patrolling%20industrial%20facility%2C%20professional%20security%20posture%2C%20industrial%20background%2C%20high%20security%20environment%2C%20professional%20security%20photography&width=600&height=400&seq=sec003&orientation=landscape" data-caption="Armed Security Personnel" data-description="Specialized armed security services for high-risk industrial and commercial facilities requiring enhanced protection">
+<div class="relative h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=armed%20security%20guard%20in%20tactical%20uniform%20patrolling%20industrial%20facility%2C%20professional%20security%20posture%2C%20industrial%20background%2C%20high%20security%20environment%2C%20professional%20security%20photography&width=600&height=400&seq=sec003&orientation=landscape" alt="Armed Security Personnel" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+<i class="ri-eye-line text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-poppins font-semibold mb-2">Armed Security Guard</h3>
+<p class="text-gray-600 text-sm">Industrial facility protection services</p>
+</div>
+</div>
+
+<div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="housekeeping" data-image="https://readdy.ai/api/search-image?query=professional%20cleaning%20staff%20maintaining%20hospital%20corridor%20cleanliness%2C%20healthcare%20facility%20housekeeping%2C%20sterile%20environment%2C%20medical%20grade%20cleaning%2C%20professional%20healthcare%20services%20photography&width=600&height=400&seq=house002&orientation=landscape" data-caption="Healthcare Facility Cleaning" data-description="Specialized housekeeping services for healthcare facilities maintaining the highest standards of cleanliness and hygiene">
+<div class="relative h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20cleaning%20staff%20maintaining%20hospital%20corridor%20cleanliness%2C%20healthcare%20facility%20housekeeping%2C%20sterile%20environment%2C%20medical%20grade%20cleaning%2C%20professional%20healthcare%20services%20photography&width=600&height=400&seq=house002&orientation=landscape" alt="Healthcare Facility Cleaning" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+<i class="ri-eye-line text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-poppins font-semibold mb-2">Healthcare Cleaning</h3>
+<p class="text-gray-600 text-sm">Medical facility maintenance services</p>
+</div>
+</div>
+
+<div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer" data-category="office" data-image="https://readdy.ai/api/search-image?query=corporate%20office%20workspace%20with%20administrative%20support%20staff%20working%20at%20desks%2C%20modern%20office%20environment%2C%20professional%20business%20setting%2C%20office%20support%20services%2C%20workplace%20photography&width=600&height=400&seq=office002&orientation=landscape" data-caption="Administrative Support Team" data-description="Our office support staff providing comprehensive administrative services in modern corporate environments">
+<div class="relative h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=corporate%20office%20workspace%20with%20administrative%20support%20staff%20working%20at%20desks%2C%20modern%20office%20environment%2C%20professional%20business%20setting%2C%20office%20support%20services%2C%20workplace%20photography&width=600&height=400&seq=office002&orientation=landscape" alt="Administrative Support Team" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+<i class="ri-eye-line text-white text-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-poppins font-semibold mb-2">Administrative Support</h3>
+<p class="text-gray-600 text-sm">Corporate office management services</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-poppins font-bold text-gray-900 mb-4">Why Choose MAN Associates</h2>
+<p class="text-lg text-gray-600">Excellence in every deployment, professionalism in every service</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="text-center">
+<div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-shield-check-line text-3xl text-primary"></i>
+</div>
+<h3 class="text-xl font-poppins font-semibold mb-4">Trained Professionals</h3>
+<p class="text-gray-600">All our staff undergo rigorous training and certification programs to ensure the highest service standards</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-time-line text-3xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-poppins font-semibold mb-4">24/7 Availability</h3>
+<p class="text-gray-600">Round-the-clock service availability with rapid response times for all your security and facility needs</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-award-line text-3xl text-primary"></i>
+</div>
+<h3 class="text-xl font-poppins font-semibold mb-4">Quality Assurance</h3>
+<p class="text-gray-600">Regular quality audits and performance monitoring ensure consistent excellence in service delivery</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<div id="lightbox" class="lightbox fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+<div class="relative max-w-4xl w-full">
+<button id="close-lightbox" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors">
+<i class="ri-close-line text-3xl"></i>
+</button>
+<button id="prev-image" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors">
+<i class="ri-arrow-left-line text-3xl"></i>
+</button>
+<button id="next-image" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors">
+<i class="ri-arrow-right-line text-3xl"></i>
+</button>
+<div class="bg-white rounded-lg overflow-hidden">
+<img id="lightbox-image" src="" alt="" class="w-full h-auto max-h-96 object-cover">
+<div class="p-6">
+<h3 id="lightbox-caption" class="text-xl font-poppins font-semibold mb-2"></h3>
+<p id="lightbox-description" class="text-gray-600"></p>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center space-x-3 mb-6">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+<img src="Man-Associates-logo.png" alt="MAN Associates Logo" class="w-12 h-12 object-contain" />
+</div>
+<div>
+<h3 class="text-xl font-poppins font-bold">MAN Associates</h3>
+<p class="text-sm opacity-75">We Serve Employer for Outsourcing</p>
+</div>
+</div>
+<p class="text-gray-400 mb-4">
+Professional manpower solutions provider since 2020, specializing in security, housekeeping, and facility management services.
+</p>
+<div class="flex space-x-4">
+<a href="https://www.facebook.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-facebook-fill text-sm"></i>
+</a>
+<a href="https://twitter.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-twitter-fill text-sm"></i>
+</a>
+<a href="https://www.linkedin.com/company/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-linkedin-fill text-sm"></i>
+</a>
+<a href="https://www.instagram.com/manassociates" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+<i class="ri-instagram-fill text-sm"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="About_Us.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="Our_Services.html" class="text-gray-400 hover:text-white transition-colors">Our Services</a></li>
+<li><a href="Events_Gallery.html" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+<li><a href="Contact_Us.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<!-- <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li> -->
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Our Services</h4>
+<ul class="space-y-3">
+<li><a href="Our_Services.html#security" class="text-gray-400 hover:text-white transition-colors">Security Services</a></li>
+<li><a href="Our_Services.html#e-security" class="text-gray-400 hover:text-white transition-colors">E-Security</a></li>
+<li><a href="Our_Services.html#office-support" class="text-gray-400 hover:text-white transition-colors">Office Support</a></li>
+<li><a href="Our_Services.html#housekeeping" class="text-gray-400 hover:text-white transition-colors">Housekeeping</a></li>
+<li><a href="Our_Services.html#pantry" class="text-gray-400 hover:text-white transition-colors">Pantry Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-poppins font-semibold mb-6">Contact Info</h4>
+<div class="space-y-4">
+<div class="flex items-start space-x-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-400 text-sm">LMS Security Services Pvt. Ltd.</p>
+<p class="text-gray-400 text-sm">MG Road, Bengaluru - 560001</p>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+    <a href="tel:+919642311515" class="text-gray-400 text-sm hover:text-white transition-colors"><p class="text-gray-400 text-sm">Support: +91 96423-11515</p></a>
+    <!-- <p class="text-gray-400 text-sm">Support: +91 96423-11515</p>
+<p class="text-gray-400 text-sm">HR: +91 87624-13452</p> -->
+<a href="tel:+918762413452" class="text-gray-400 text-sm hover:text-white transition-colors"><p class="text-gray-400 text-sm">HR: +91 87624-13452</p></a>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<a href="mailto:info@manassociates.com" class="text-gray-400 text-sm hover:text-white transition-colors">info@manassociates.com</a>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">
+© <span id="current-year">2025</span> MAN Associates. All rights reserved.
+</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a href="Privacy_Policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+<a href="Terms_of_Service.html" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+<a href="Cookie_Policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<div class="fixed bottom-6 right-6 z-50">
+<a href="https://wa.me/919642311515" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+<i class="ri-whatsapp-line text-white text-2xl"></i>
+</a>
+</div>
+
+<button id="back-to-top" class="fixed bottom-6 left-6 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-opacity-90 z-50">
+<i class="ri-arrow-up-line"></i>
+</button>
+
+
+<script id="header-scroll">
+document.addEventListener('DOMContentLoaded', function() {
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 100) {
+header.classList.add('bg-white', 'shadow-lg');
+header.classList.remove('bg-transparent','text-white');
+} else {
+header.classList.remove('bg-white', 'shadow-lg');
+header.classList.add('bg-transparent','text-white');
+}
+});
+});
+</script>
+
+<script id="gallery-filter">
+document.addEventListener('DOMContentLoaded', function() {
+const filterButtons = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterButtons.forEach(button => {
+button.addEventListener('click', () => {
+const filter = button.getAttribute('data-filter');
+filterButtons.forEach(btn => btn.classList.remove('active'));
+button.classList.add('active');
+
+galleryItems.forEach(item => {
+const category = item.getAttribute('data-category');
+if (filter === 'all' || category === filter) {
+item.style.display = 'block';
+setTimeout(() => {
+item.style.opacity = '1';
+item.style.transform = 'scale(1)';
+}, 50);
+} else {
+item.style.opacity = '0';
+item.style.transform = 'scale(0.8)';
+setTimeout(() => {
+item.style.display = 'none';
+}, 300);
+}
+});
+});
+});
+});
+</script>
+
+<script id="lightbox-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxDescription = document.getElementById('lightbox-description');
+const closeLightbox = document.getElementById('close-lightbox');
+const prevImage = document.getElementById('prev-image');
+const nextImage = document.getElementById('next-image');
+
+let currentImageIndex = 0;
+let visibleItems = [];
+
+function updateVisibleItems() {
+visibleItems = Array.from(galleryItems).filter(item => 
+item.style.display !== 'none' && item.style.opacity !== '0'
+);
+}
+
+function openLightbox(index) {
+currentImageIndex = index;
+const item = visibleItems[currentImageIndex];
+const imageSrc = item.getAttribute('data-image');
+const caption = item.getAttribute('data-caption');
+const description = item.getAttribute('data-description');
+
+lightboxImage.src = imageSrc;
+lightboxImage.alt = caption;
+lightboxCaption.textContent = caption;
+lightboxDescription.textContent = description;
+
+lightbox.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+
+function closeLightboxFunc() {
+lightbox.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+
+function showPrevImage() {
+currentImageIndex = (currentImageIndex - 1 + visibleItems.length) % visibleItems.length;
+openLightbox(currentImageIndex);
+}
+
+function showNextImage() {
+currentImageIndex = (currentImageIndex + 1) % visibleItems.length;
+openLightbox(currentImageIndex);
+}
+
+galleryItems.forEach((item, index) => {
+item.addEventListener('click', () => {
+updateVisibleItems();
+const visibleIndex = visibleItems.indexOf(item);
+if (visibleIndex !== -1) {
+openLightbox(visibleIndex);
+}
+});
+});
+
+closeLightbox.addEventListener('click', closeLightboxFunc);
+prevImage.addEventListener('click', showPrevImage);
+nextImage.addEventListener('click', showNextImage);
+
+lightbox.addEventListener('click', (e) => {
+if (e.target === lightbox) {
+closeLightboxFunc();
+}
+});
+
+document.addEventListener('keydown', (e) => {
+if (!lightbox.classList.contains('hidden')) {
+if (e.key === 'Escape') {
+closeLightboxFunc();
+} else if (e.key === 'ArrowLeft') {
+showPrevImage();
+} else if (e.key === 'ArrowRight') {
+showNextImage();
+}
+}
+});
+
+updateVisibleItems();
+});
+</script>
+
+<script id="back-to-top">
+document.addEventListener('DOMContentLoaded', function() {
+const backToTopBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 500) {
+backToTopBtn.classList.remove('opacity-0', 'invisible');
+backToTopBtn.classList.add('opacity-100', 'visible');
+} else {
+backToTopBtn.classList.add('opacity-0', 'invisible');
+backToTopBtn.classList.remove('opacity-100', 'visible');
+}
+});
+backToTopBtn.addEventListener('click', () => {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+});
+</script>
+
+<script id="current-year">
+document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('current-year').textContent = new Date().getFullYear();
+});
+</script>
+
+</body>
+</html>
